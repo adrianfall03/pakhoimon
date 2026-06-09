@@ -77,7 +77,10 @@
     const sp = util.monByDex(inst.dex);
     const b = sp.baseStats, L = inst.level;
     const out = {};
-    out.maxHp = Math.floor((2 * b.hp + inst.ivs.hp + Math.floor(inst.evs.hp / 4)) * L / 100) + L + 10;
+    // Standard HP, scaled up a uniform 15%. The extra bulk lengthens fights by ~1 turn so
+    // the faster side's first-strike edge is less decisive and a small level gap is no
+    // longer an automatic blow-out — without bloating low-level HP into tediously long battles.
+    out.maxHp = Math.round((Math.floor((2 * b.hp + inst.ivs.hp + Math.floor(inst.evs.hp / 4)) * L / 100) + L + 10) * 1.15);
     const nat = NATURES[inst.nature];
     for (const s of ['atk', 'def', 'spa', 'spd', 'spe']) {
       let v = Math.floor((2 * b[s] + inst.ivs[s] + Math.floor(inst.evs[s] / 4)) * L / 100) + 5;
@@ -120,12 +123,18 @@
     return { cur: inst.exp - cur, need: next - cur };
   };
 
-  // experience yield for defeating `foe` with `winner` (a flat, friendly formula)
+  // Experience yield with a Gen5-style level-scaling factor: beating a foe ABOVE your
+  // level grants bonus EXP (so an under-levelled player self-corrects toward the curve),
+  // while grinding far-below foes gives little. Keeps natural play in pace with the world.
   Species.expYield = function (foe, winnerLevel, opts = {}) {
     const sp = util.monByDex(foe.dex);
-    let exp = Math.floor((sp.baseExp * foe.level) / 6);
-    if (opts.trainer) exp = Math.floor(exp * 1.5);
-    return Math.max(1, exp);
+    const Lf = foe.level, Lp = Math.max(1, winnerLevel || Lf);
+    let exp = (sp.baseExp * Lf) / 5;
+    // strong level-scaling: being under the foe's level grants a big catch-up bonus,
+    // being over it sharply cuts the yield — keeping the player near the content level.
+    exp *= Math.pow((2 * Lf + 10) / (Lf + Lp + 10), 3.2);
+    if (opts.trainer) exp *= 1.5;
+    return Math.max(1, Math.floor(exp));
   };
 
   // teach a move (replacing index if provided)
@@ -160,6 +169,19 @@
     inst.maxHp = st.maxHp;
     inst.curHp += (inst.maxHp - oldMax);
     return true;
+  };
+
+  // Walk a level-based evolution chain to the form appropriate for `level`.
+  // Used so wild encounters on higher routes spawn already-evolved (level-appropriate) forms.
+  Species.dexForLevel = function (dex, level) {
+    let m = util.monByDex(dex);
+    let guard = 0;
+    while (m && m.evolution && m.evolution.type === 'level' && level >= m.evolution.level && guard++ < 5) {
+      const next = util.mon(m.evolution.to);
+      if (!next) break;
+      m = next;
+    }
+    return m ? m.dex : dex;
   };
 
   Species.fullHeal = function (inst) {

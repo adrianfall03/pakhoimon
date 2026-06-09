@@ -142,8 +142,9 @@
     let r = Math.random() * total, chosen = enc.table[0];
     for (const e of enc.table) { r -= e.weight; if (r <= 0) { chosen = e; break; } }
     const level = util.rand(chosen.min, chosen.max);
-    const wild = MQ.Species.create(chosen.dex, level);
-    MQ.Game.markSeen(chosen.dex);
+    const spawnDex = MQ.Species.dexForLevel(chosen.dex, level); // evolve to a level-appropriate form
+    const wild = MQ.Species.create(spawnDex, level);
+    MQ.Game.markSeen(spawnDex);
     MQ.Transition.fade(() => MQ.Battle.startWild(wild));
   }
 

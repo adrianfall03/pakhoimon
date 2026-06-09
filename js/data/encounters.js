@@ -5,40 +5,40 @@ window.MQ.encounters = {
   "kind": "grass",
   "table": [
    {
-    "dex": 4,
-    "min": 6,
-    "max": 9,
-    "weight": 5
-   },
-   {
-    "dex": 182,
-    "min": 6,
-    "max": 9,
-    "weight": 27
-   },
-   {
-    "dex": 214,
-    "min": 6,
-    "max": 9,
+    "dex": 202,
+    "min": 3,
+    "max": 5,
     "weight": 17
    },
    {
-    "dex": 112,
-    "min": 6,
-    "max": 9,
-    "weight": 8
+    "dex": 138,
+    "min": 3,
+    "max": 5,
+    "weight": 17
    },
    {
-    "dex": 202,
-    "min": 6,
-    "max": 9,
-    "weight": 21
+    "dex": 83,
+    "min": 3,
+    "max": 5,
+    "weight": 28
    },
    {
-    "dex": 147,
-    "min": 6,
-    "max": 9,
-    "weight": 5
+    "dex": 81,
+    "min": 3,
+    "max": 5,
+    "weight": 24
+   },
+   {
+    "dex": 21,
+    "min": 3,
+    "max": 5,
+    "weight": 18
+   },
+   {
+    "dex": 145,
+    "min": 3,
+    "max": 5,
+    "weight": 7
    }
   ]
  },
@@ -46,40 +46,40 @@ window.MQ.encounters = {
   "kind": "grass",
   "table": [
    {
-    "dex": 110,
-    "min": 10,
-    "max": 13,
+    "dex": 202,
+    "min": 7,
+    "max": 9,
+    "weight": 12
+   },
+   {
+    "dex": 83,
+    "min": 7,
+    "max": 9,
+    "weight": 23
+   },
+   {
+    "dex": 81,
+    "min": 7,
+    "max": 9,
+    "weight": 23
+   },
+   {
+    "dex": 145,
+    "min": 7,
+    "max": 9,
+    "weight": 16
+   },
+   {
+    "dex": 21,
+    "min": 7,
+    "max": 9,
     "weight": 10
    },
    {
-    "dex": 147,
-    "min": 10,
-    "max": 13,
-    "weight": 16
-   },
-   {
-    "dex": 4,
-    "min": 10,
-    "max": 13,
-    "weight": 7
-   },
-   {
-    "dex": 4,
-    "min": 10,
-    "max": 13,
-    "weight": 16
-   },
-   {
-    "dex": 214,
-    "min": 10,
-    "max": 13,
-    "weight": 24
-   },
-   {
-    "dex": 4,
-    "min": 10,
-    "max": 13,
-    "weight": 19
+    "dex": 138,
+    "min": 7,
+    "max": 9,
+    "weight": 21
    }
   ]
  },
@@ -87,39 +87,39 @@ window.MQ.encounters = {
   "kind": "grass",
   "table": [
    {
-    "dex": 174,
-    "min": 12,
-    "max": 15,
-    "weight": 12
-   },
-   {
-    "dex": 134,
-    "min": 12,
-    "max": 15,
-    "weight": 16
-   },
-   {
-    "dex": 47,
-    "min": 12,
-    "max": 15,
-    "weight": 27
-   },
-   {
-    "dex": 13,
-    "min": 12,
-    "max": 15,
-    "weight": 30
+    "dex": 143,
+    "min": 8,
+    "max": 11,
+    "weight": 5
    },
    {
     "dex": 185,
-    "min": 12,
-    "max": 15,
+    "min": 8,
+    "max": 11,
+    "weight": 30
+   },
+   {
+    "dex": 15,
+    "min": 8,
+    "max": 11,
+    "weight": 30
+   },
+   {
+    "dex": 98,
+    "min": 8,
+    "max": 11,
     "weight": 11
    },
    {
-    "dex": 48,
-    "min": 12,
-    "max": 15,
+    "dex": 151,
+    "min": 8,
+    "max": 11,
+    "weight": 11
+   },
+   {
+    "dex": 43,
+    "min": 8,
+    "max": 11,
     "weight": 26
    }
   ]
@@ -128,40 +128,40 @@ window.MQ.encounters = {
   "kind": "grass",
   "table": [
    {
-    "dex": 157,
-    "min": 16,
-    "max": 19,
-    "weight": 13
-   },
-   {
-    "dex": 49,
-    "min": 16,
-    "max": 19,
-    "weight": 18
-   },
-   {
-    "dex": 136,
-    "min": 16,
-    "max": 19,
-    "weight": 12
-   },
-   {
-    "dex": 115,
-    "min": 16,
-    "max": 19,
+    "dex": 166,
+    "min": 13,
+    "max": 16,
     "weight": 22
    },
    {
-    "dex": 10,
-    "min": 16,
-    "max": 19,
+    "dex": 70,
+    "min": 13,
+    "max": 16,
+    "weight": 6
+   },
+   {
+    "dex": 33,
+    "min": 13,
+    "max": 16,
     "weight": 9
    },
    {
-    "dex": 45,
-    "min": 16,
-    "max": 19,
+    "dex": 108,
+    "min": 13,
+    "max": 16,
+    "weight": 7
+   },
+   {
+    "dex": 121,
+    "min": 13,
+    "max": 16,
     "weight": 9
+   },
+   {
+    "dex": 128,
+    "min": 13,
+    "max": 16,
+    "weight": 23
    }
   ]
  },
@@ -169,40 +169,40 @@ window.MQ.encounters = {
   "kind": "grass",
   "table": [
    {
-    "dex": 171,
-    "min": 20,
-    "max": 23,
-    "weight": 11
-   },
-   {
-    "dex": 158,
-    "min": 20,
-    "max": 23,
+    "dex": 120,
+    "min": 19,
+    "max": 22,
     "weight": 19
    },
    {
-    "dex": 139,
-    "min": 20,
-    "max": 23,
+    "dex": 45,
+    "min": 19,
+    "max": 22,
+    "weight": 21
+   },
+   {
+    "dex": 115,
+    "min": 19,
+    "max": 22,
     "weight": 26
    },
    {
-    "dex": 121,
-    "min": 20,
-    "max": 23,
+    "dex": 197,
+    "min": 19,
+    "max": 22,
+    "weight": 18
+   },
+   {
+    "dex": 33,
+    "min": 19,
+    "max": 22,
     "weight": 15
    },
    {
-    "dex": 128,
-    "min": 20,
-    "max": 23,
-    "weight": 7
-   },
-   {
-    "dex": 121,
-    "min": 20,
-    "max": 23,
-    "weight": 25
+    "dex": 171,
+    "min": 19,
+    "max": 22,
+    "weight": 19
    }
   ]
  },
@@ -210,40 +210,40 @@ window.MQ.encounters = {
   "kind": "cave",
   "table": [
    {
-    "dex": 158,
-    "min": 24,
-    "max": 28,
-    "weight": 10
+    "dex": 166,
+    "min": 21,
+    "max": 24,
+    "weight": 11
+   },
+   {
+    "dex": 128,
+    "min": 21,
+    "max": 24,
+    "weight": 7
+   },
+   {
+    "dex": 120,
+    "min": 21,
+    "max": 24,
+    "weight": 29
+   },
+   {
+    "dex": 59,
+    "min": 21,
+    "max": 24,
+    "weight": 14
+   },
+   {
+    "dex": 115,
+    "min": 21,
+    "max": 24,
+    "weight": 17
    },
    {
     "dex": 136,
-    "min": 24,
-    "max": 28,
+    "min": 21,
+    "max": 24,
     "weight": 18
-   },
-   {
-    "dex": 157,
-    "min": 24,
-    "max": 28,
-    "weight": 9
-   },
-   {
-    "dex": 70,
-    "min": 24,
-    "max": 28,
-    "weight": 16
-   },
-   {
-    "dex": 33,
-    "min": 24,
-    "max": 28,
-    "weight": 27
-   },
-   {
-    "dex": 121,
-    "min": 24,
-    "max": 28,
-    "weight": 30
    }
   ]
  },
@@ -251,40 +251,40 @@ window.MQ.encounters = {
   "kind": "grass",
   "table": [
    {
-    "dex": 191,
-    "min": 26,
-    "max": 29,
-    "weight": 11
+    "dex": 91,
+    "min": 25,
+    "max": 28,
+    "weight": 29
+   },
+   {
+    "dex": 106,
+    "min": 25,
+    "max": 28,
+    "weight": 16
    },
    {
     "dex": 53,
-    "min": 26,
-    "max": 29,
-    "weight": 5
+    "min": 25,
+    "max": 28,
+    "weight": 28
    },
    {
-    "dex": 189,
-    "min": 26,
-    "max": 29,
-    "weight": 24
-   },
-   {
-    "dex": 175,
-    "min": 26,
-    "max": 29,
-    "weight": 18
-   },
-   {
-    "dex": 212,
-    "min": 26,
-    "max": 29,
-    "weight": 24
+    "dex": 199,
+    "min": 25,
+    "max": 28,
+    "weight": 12
    },
    {
     "dex": 16,
-    "min": 26,
-    "max": 29,
-    "weight": 10
+    "min": 25,
+    "max": 28,
+    "weight": 11
+   },
+   {
+    "dex": 24,
+    "min": 25,
+    "max": 28,
+    "weight": 14
    }
   ]
  },
@@ -292,40 +292,40 @@ window.MQ.encounters = {
   "kind": "grass",
   "table": [
    {
-    "dex": 78,
-    "min": 30,
-    "max": 33,
-    "weight": 26
+    "dex": 134,
+    "min": 31,
+    "max": 34,
+    "weight": 11
    },
    {
     "dex": 93,
-    "min": 30,
-    "max": 33,
-    "weight": 27
-   },
-   {
-    "dex": 134,
-    "min": 30,
-    "max": 33,
-    "weight": 18
-   },
-   {
-    "dex": 56,
-    "min": 30,
-    "max": 33,
-    "weight": 14
-   },
-   {
-    "dex": 174,
-    "min": 30,
-    "max": 33,
-    "weight": 30
+    "min": 31,
+    "max": 34,
+    "weight": 21
    },
    {
     "dex": 86,
-    "min": 30,
-    "max": 33,
-    "weight": 5
+    "min": 31,
+    "max": 34,
+    "weight": 15
+   },
+   {
+    "dex": 48,
+    "min": 31,
+    "max": 34,
+    "weight": 23
+   },
+   {
+    "dex": 98,
+    "min": 31,
+    "max": 34,
+    "weight": 28
+   },
+   {
+    "dex": 47,
+    "min": 31,
+    "max": 34,
+    "weight": 28
    }
   ]
  },
@@ -333,40 +333,40 @@ window.MQ.encounters = {
   "kind": "cave",
   "table": [
    {
-    "dex": 123,
-    "min": 36,
+    "dex": 125,
+    "min": 37,
     "max": 40,
-    "weight": 23
-   },
-   {
-    "dex": 123,
-    "min": 36,
-    "max": 40,
-    "weight": 16
+    "weight": 5
    },
    {
     "dex": 19,
-    "min": 36,
+    "min": 37,
     "max": 40,
-    "weight": 21
+    "weight": 28
    },
    {
-    "dex": 123,
-    "min": 36,
+    "dex": 149,
+    "min": 37,
     "max": 40,
-    "weight": 11
+    "weight": 17
+   },
+   {
+    "dex": 101,
+    "min": 37,
+    "max": 40,
+    "weight": 5
    },
    {
     "dex": 84,
-    "min": 36,
+    "min": 37,
     "max": 40,
-    "weight": 9
+    "weight": 6
    },
    {
-    "dex": 52,
-    "min": 36,
+    "dex": 68,
+    "min": 37,
     "max": 40,
-    "weight": 13
+    "weight": 9
    }
   ]
  },
@@ -374,40 +374,40 @@ window.MQ.encounters = {
   "kind": "grass",
   "table": [
    {
-    "dex": 27,
-    "min": 36,
-    "max": 39,
-    "weight": 15
+    "dex": 193,
+    "min": 39,
+    "max": 42,
+    "weight": 28
    },
    {
-    "dex": 155,
-    "min": 36,
-    "max": 39,
-    "weight": 6
+    "dex": 105,
+    "min": 39,
+    "max": 42,
+    "weight": 23
+   },
+   {
+    "dex": 73,
+    "min": 39,
+    "max": 42,
+    "weight": 16
    },
    {
     "dex": 163,
-    "min": 36,
-    "max": 39,
-    "weight": 29
+    "min": 39,
+    "max": 42,
+    "weight": 6
    },
    {
-    "dex": 31,
-    "min": 36,
-    "max": 39,
-    "weight": 12
+    "dex": 40,
+    "min": 39,
+    "max": 42,
+    "weight": 27
    },
    {
-    "dex": 55,
-    "min": 36,
-    "max": 39,
-    "weight": 8
-   },
-   {
-    "dex": 76,
-    "min": 36,
-    "max": 39,
-    "weight": 29
+    "dex": 169,
+    "min": 39,
+    "max": 42,
+    "weight": 22
    }
   ]
  },
@@ -416,39 +416,39 @@ window.MQ.encounters = {
   "table": [
    {
     "dex": 31,
-    "min": 40,
-    "max": 43,
-    "weight": 13
-   },
-   {
-    "dex": 208,
-    "min": 40,
-    "max": 43,
-    "weight": 23
-   },
-   {
-    "dex": 195,
-    "min": 40,
-    "max": 43,
-    "weight": 5
-   },
-   {
-    "dex": 73,
-    "min": 40,
-    "max": 43,
-    "weight": 28
+    "min": 44,
+    "max": 47,
+    "weight": 19
    },
    {
     "dex": 40,
-    "min": 40,
-    "max": 43,
-    "weight": 25
+    "min": 44,
+    "max": 47,
+    "weight": 15
    },
    {
-    "dex": 169,
-    "min": 40,
-    "max": 43,
-    "weight": 20
+    "dex": 205,
+    "min": 44,
+    "max": 47,
+    "weight": 6
+   },
+   {
+    "dex": 105,
+    "min": 44,
+    "max": 47,
+    "weight": 21
+   },
+   {
+    "dex": 154,
+    "min": 44,
+    "max": 47,
+    "weight": 12
+   },
+   {
+    "dex": 163,
+    "min": 44,
+    "max": 47,
+    "weight": 7
    }
   ]
  },
@@ -456,40 +456,40 @@ window.MQ.encounters = {
   "kind": "cave",
   "table": [
    {
-    "dex": 212,
-    "min": 46,
-    "max": 50,
-    "weight": 29
+    "dex": 199,
+    "min": 48,
+    "max": 52,
+    "weight": 28
    },
    {
-    "dex": 11,
-    "min": 46,
-    "max": 50,
+    "dex": 212,
+    "min": 48,
+    "max": 52,
+    "weight": 28
+   },
+   {
+    "dex": 175,
+    "min": 48,
+    "max": 52,
+    "weight": 27
+   },
+   {
+    "dex": 24,
+    "min": 48,
+    "max": 52,
     "weight": 22
    },
    {
-    "dex": 11,
-    "min": 46,
-    "max": 50,
-    "weight": 15
+    "dex": 53,
+    "min": 48,
+    "max": 52,
+    "weight": 6
    },
    {
     "dex": 91,
-    "min": 46,
-    "max": 50,
-    "weight": 18
-   },
-   {
-    "dex": 91,
-    "min": 46,
-    "max": 50,
-    "weight": 19
-   },
-   {
-    "dex": 11,
-    "min": 46,
-    "max": 50,
-    "weight": 11
+    "min": 48,
+    "max": 52,
+    "weight": 14
    }
   ]
  }

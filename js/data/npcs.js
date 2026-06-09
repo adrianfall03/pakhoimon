@@ -126,18 +126,14 @@ window.MQ.npcs = [
   "dir": "right",
   "team": [
    {
-    "dex": 67,
-    "level": 17
-   },
-   {
-    "dex": 67,
-    "level": 16
+    "dex": 64,
+    "level": 5
    }
   ],
-  "money": 396,
+  "money": 60,
   "sight": 3,
-  "preBattle": "让你见识见识真正的实力！",
-  "postBattle": "可恶……你比我想象的要强。",
+  "preBattle": "哈，又来一个想挑战联盟的小鬼。",
+  "postBattle": "看来你和怪兽的羁绊更深。",
   "defeated": false
  },
  {
@@ -151,18 +147,14 @@ window.MQ.npcs = [
   "dir": "left",
   "team": [
    {
-    "dex": 85,
-    "level": 15
-   },
-   {
-    "dex": 106,
-    "level": 17
+    "dex": 64,
+    "level": 3
    }
   ],
-  "money": 384,
+  "money": 36,
   "sight": 3,
-  "preBattle": "哈，又来一个想挑战联盟的小鬼。",
-  "postBattle": "这就是实力的差距吗……",
+  "preBattle": "让你见识见识真正的实力！",
+  "postBattle": "可恶……你比我想象的要强。",
   "defeated": false
  },
  {
@@ -180,23 +172,15 @@ window.MQ.npcs = [
   },
   "team": [
    {
-    "dex": 64,
-    "level": 19
+    "dex": 107,
+    "level": 6
    },
    {
-    "dex": 103,
-    "level": 18
-   },
-   {
-    "dex": 85,
-    "level": 20
-   },
-   {
-    "dex": 10,
-    "level": 20
+    "dex": 63,
+    "level": 7
    }
   ],
-  "money": 2310,
+  "money": 390,
   "preBattle": "我是川岸镇道馆馆主，专精虫属性！让我看看你的觉悟！",
   "postBattle": "了不起……这枚虫林徽章是你应得的。",
   "defeated": false
@@ -210,7 +194,7 @@ window.MQ.npcs = [
   "y": 8,
   "dir": "down",
   "dialogue": [
-   "我在森林里迷路过三次，你可要带好地图。"
+   "黯灭组织最近频繁出没，旅行要当心。"
   ]
  },
  {
@@ -222,7 +206,7 @@ window.MQ.npcs = [
   "y": 12,
   "dir": "down",
   "dialogue": [
-   "状态异常会持续消耗体力，要及时治疗。"
+   "听老人说，月之石只在满月的夜晚才会发光。"
   ]
  },
  {
@@ -267,7 +251,7 @@ window.MQ.npcs = [
   "y": 3,
   "dir": "down",
   "dialogue": [
-   "别老是站在原地发呆啦，去冒险吧！"
+   "迷雾村的夜晚，常能听见幽灵怪兽的低语。"
   ]
  },
  {
@@ -281,18 +265,18 @@ window.MQ.npcs = [
   "dir": "right",
   "team": [
    {
-    "dex": 150,
-    "level": 24
+    "dex": 146,
+    "level": 9
    },
    {
-    "dex": 100,
-    "level": 25
+    "dex": 162,
+    "level": 10
    }
   ],
-  "money": 588,
+  "money": 228,
   "sight": 3,
-  "preBattle": "我训练我的伙伴们很久了！",
-  "postBattle": "了不起，收下这点谢礼吧。",
+  "preBattle": "让你见识见识真正的实力！",
+  "postBattle": "我会变得更强的！",
   "defeated": false
  },
  {
@@ -306,15 +290,15 @@ window.MQ.npcs = [
   "dir": "left",
   "team": [
    {
-    "dex": 162,
-    "level": 25
+    "dex": 161,
+    "level": 9
    },
    {
-    "dex": 44,
-    "level": 25
+    "dex": 162,
+    "level": 11
    }
   ],
-  "money": 600,
+  "money": 240,
   "sight": 3,
   "preBattle": "哈，又来一个想挑战联盟的小鬼。",
   "postBattle": "我会变得更强的！",
@@ -335,23 +319,19 @@ window.MQ.npcs = [
   },
   "team": [
    {
-    "dex": 98,
-    "level": 29
+    "dex": 99,
+    "level": 12
    },
    {
-    "dex": 44,
-    "level": 28
+    "dex": 161,
+    "level": 12
    },
    {
-    "dex": 150,
-    "level": 29
-   },
-   {
-    "dex": 98,
-    "level": 28
+    "dex": 99,
+    "level": 13
    }
   ],
-  "money": 3420,
+  "money": 1110,
   "preBattle": "我是雷鸣市道馆馆主，专精电属性！让我看看你的觉悟！",
   "postBattle": "了不起……这枚雷光徽章是你应得的。",
   "defeated": false
@@ -359,25 +339,25 @@ window.MQ.npcs = [
  {
   "id": "npc_020",
   "kind": "flavor",
-  "name": "老人",
+  "name": "居民",
   "map": "town_thunder",
   "x": 10,
   "y": 8,
   "dir": "down",
   "dialogue": [
-   "精灵中心可以免费治疗你的怪兽，记得常去。"
+   "迷雾村的夜晚，常能听见幽灵怪兽的低语。"
   ]
  },
  {
   "id": "npc_021",
   "kind": "flavor",
-  "name": "渔夫",
+  "name": "老人",
   "map": "town_thunder",
   "x": 14,
   "y": 12,
   "dir": "down",
   "dialogue": [
-   "进化石能让特定的怪兽进化，商店偶尔会进货。"
+   "熔火城的温泉对怪兽的疲劳很有效呢。"
   ]
  },
  {
@@ -416,13 +396,13 @@ window.MQ.npcs = [
  {
   "id": "npc_024",
   "kind": "flavor",
-  "name": "研究员",
+  "name": "少女",
   "map": "int_house_town_harbor",
   "x": 8,
   "y": 3,
   "dir": "down",
   "dialogue": [
-   "别小看普通属性的怪兽，潜力深不可测。"
+   "状态异常会持续消耗体力，要及时治疗。"
   ]
  },
  {
@@ -436,18 +416,18 @@ window.MQ.npcs = [
   "dir": "right",
   "team": [
    {
-    "dex": 8,
-    "level": 30
+    "dex": 16,
+    "level": 16
    },
    {
-    "dex": 94,
-    "level": 30
+    "dex": 147,
+    "level": 17
    }
   ],
-  "money": 720,
+  "money": 396,
   "sight": 3,
   "preBattle": "哈，又来一个想挑战联盟的小鬼。",
-  "postBattle": "可恶……你比我想象的要强。",
+  "postBattle": "这就是实力的差距吗……",
   "defeated": false
  },
  {
@@ -461,17 +441,17 @@ window.MQ.npcs = [
   "dir": "left",
   "team": [
    {
-    "dex": 175,
-    "level": 32
+    "dex": 73,
+    "level": 15
    },
    {
-    "dex": 94,
-    "level": 30
+    "dex": 148,
+    "level": 15
    }
   ],
-  "money": 744,
+  "money": 360,
   "sight": 3,
-  "preBattle": "我可不会手下留情！",
+  "preBattle": "我训练我的伙伴们很久了！",
   "postBattle": "我会变得更强的！",
   "defeated": false
  },
@@ -490,23 +470,19 @@ window.MQ.npcs = [
   },
   "team": [
    {
-    "dex": 37,
-    "level": 34
+    "dex": 17,
+    "level": 16
    },
    {
-    "dex": 153,
-    "level": 33
+    "dex": 101,
+    "level": 16
    },
    {
-    "dex": 37,
-    "level": 33
-   },
-   {
-    "dex": 203,
-    "level": 34
+    "dex": 73,
+    "level": 19
    }
   ],
-  "money": 4020,
+  "money": 1530,
   "preBattle": "我是碧波港道馆馆主，专精水属性！让我看看你的觉悟！",
   "postBattle": "了不起……这枚碧波徽章是你应得的。",
   "defeated": false
@@ -514,25 +490,25 @@ window.MQ.npcs = [
  {
   "id": "npc_028",
   "kind": "flavor",
-  "name": "登山客",
+  "name": "居民",
   "map": "town_harbor",
   "x": 10,
   "y": 8,
   "dir": "down",
   "dialogue": [
-   "别小看普通属性的怪兽，潜力深不可测。"
+   "黯灭组织想唤醒虚空之兽，那太危险了！"
   ]
  },
  {
   "id": "npc_029",
   "kind": "flavor",
-  "name": "渔夫",
+  "name": "登山客",
   "map": "town_harbor",
   "x": 14,
   "y": 12,
   "dir": "down",
   "dialogue": [
-   "我在森林里迷路过三次，你可要带好地图。"
+   "霜寒镇的冰雕节是一年中最热闹的时候。"
   ]
  },
  {
@@ -571,13 +547,13 @@ window.MQ.npcs = [
  {
   "id": "npc_032",
   "kind": "flavor",
-  "name": "登山客",
+  "name": "老人",
   "map": "int_house_town_stone",
   "x": 8,
   "y": 3,
   "dir": "down",
   "dialogue": [
-   "风从天穹市的方向吹来，带着龙的气息。"
+   "黯灭组织想唤醒虚空之兽，那太危险了！"
   ]
  },
  {
@@ -592,17 +568,21 @@ window.MQ.npcs = [
   "team": [
    {
     "dex": 83,
-    "level": 40
+    "level": 21
    },
    {
-    "dex": 83,
-    "level": 40
+    "dex": 138,
+    "level": 23
+   },
+   {
+    "dex": 32,
+    "level": 21
    }
   ],
-  "money": 960,
+  "money": 780,
   "sight": 3,
-  "preBattle": "哈，又来一个想挑战联盟的小鬼。",
-  "postBattle": "可恶……你比我想象的要强。",
+  "preBattle": "想从我身边过去？先打赢我再说！",
+  "postBattle": "了不起，收下这点谢礼吧。",
   "defeated": false
  },
  {
@@ -616,18 +596,22 @@ window.MQ.npcs = [
   "dir": "left",
   "team": [
    {
-    "dex": 138,
-    "level": 39
+    "dex": 83,
+    "level": 23
    },
    {
-    "dex": 13,
-    "level": 41
+    "dex": 138,
+    "level": 22
+   },
+   {
+    "dex": 138,
+    "level": 23
    }
   ],
-  "money": 960,
+  "money": 816,
   "sight": 3,
   "preBattle": "哈，又来一个想挑战联盟的小鬼。",
-  "postBattle": "了不起，收下这点谢礼吧。",
+  "postBattle": "这就是实力的差距吗……",
   "defeated": false
  },
  {
@@ -645,23 +629,23 @@ window.MQ.npcs = [
   },
   "team": [
    {
-    "dex": 32,
-    "level": 42
+    "dex": 138,
+    "level": 23
+   },
+   {
+    "dex": 83,
+    "level": 22
    },
    {
     "dex": 31,
-    "level": 42
+    "level": 24
    },
    {
-    "dex": 83,
-    "level": 43
-   },
-   {
-    "dex": 83,
-    "level": 42
+    "dex": 31,
+    "level": 25
    }
   ],
-  "money": 5070,
+  "money": 2820,
   "preBattle": "我是苍岩镇道馆馆主，专精岩石属性！让我看看你的觉悟！",
   "postBattle": "了不起……这枚磐石徽章是你应得的。",
   "defeated": false
@@ -669,25 +653,25 @@ window.MQ.npcs = [
  {
   "id": "npc_036",
   "kind": "flavor",
-  "name": "老人",
+  "name": "居民",
   "map": "town_stone",
   "x": 10,
   "y": 8,
   "dir": "down",
   "dialogue": [
-   "我年轻时也是个训练师，如今只想看看后辈们的成长。"
+   "别老是站在原地发呆啦，去冒险吧！"
   ]
  },
  {
   "id": "npc_037",
   "kind": "flavor",
-  "name": "老人",
+  "name": "少女",
   "map": "town_stone",
   "x": 14,
   "y": 12,
   "dir": "down",
   "dialogue": [
-   "黯灭组织最近频繁出没，旅行要当心。"
+   "状态异常会持续消耗体力，要及时治疗。"
   ]
  },
  {
@@ -726,13 +710,13 @@ window.MQ.npcs = [
  {
   "id": "npc_040",
   "kind": "flavor",
-  "name": "少年",
+  "name": "老人",
   "map": "int_house_town_mist",
   "x": 8,
   "y": 3,
   "dir": "down",
   "dialogue": [
-   "碧波港的海鲜可是远近闻名。"
+   "据说收集齐八枚徽章，就能挑战精灵联盟。"
   ]
  },
  {
@@ -746,18 +730,22 @@ window.MQ.npcs = [
   "dir": "right",
   "team": [
    {
-    "dex": 207,
-    "level": 45
+    "dex": 30,
+    "level": 27
    },
    {
-    "dex": 204,
-    "level": 47
+    "dex": 203,
+    "level": 28
+   },
+   {
+    "dex": 92,
+    "level": 27
    }
   ],
-  "money": 1104,
+  "money": 984,
   "sight": 3,
   "preBattle": "想从我身边过去？先打赢我再说！",
-  "postBattle": "看来你和怪兽的羁绊更深。",
+  "postBattle": "可恶……你比我想象的要强。",
   "defeated": false
  },
  {
@@ -771,18 +759,22 @@ window.MQ.npcs = [
   "dir": "left",
   "team": [
    {
-    "dex": 82,
-    "level": 47
+    "dex": 41,
+    "level": 27
    },
    {
-    "dex": 82,
-    "level": 45
+    "dex": 46,
+    "level": 29
+   },
+   {
+    "dex": 207,
+    "level": 27
    }
   ],
-  "money": 1104,
+  "money": 996,
   "sight": 3,
-  "preBattle": "哈，又来一个想挑战联盟的小鬼。",
-  "postBattle": "可恶……你比我想象的要强。",
+  "preBattle": "我可不会手下留情！",
+  "postBattle": "了不起，收下这点谢礼吧。",
   "defeated": false
  },
  {
@@ -800,23 +792,23 @@ window.MQ.npcs = [
   },
   "team": [
    {
-    "dex": 207,
-    "level": 48
-   },
-   {
-    "dex": 41,
-    "level": 49
+    "dex": 38,
+    "level": 29
    },
    {
     "dex": 81,
-    "level": 48
+    "level": 30
    },
    {
-    "dex": 209,
-    "level": 50
+    "dex": 81,
+    "level": 28
+   },
+   {
+    "dex": 45,
+    "level": 31
    }
   ],
-  "money": 5850,
+  "money": 3540,
   "preBattle": "我是迷雾村道馆馆主，专精幽灵属性！让我看看你的觉悟！",
   "postBattle": "了不起……这枚幽冥徽章是你应得的。",
   "defeated": false
@@ -824,25 +816,25 @@ window.MQ.npcs = [
  {
   "id": "npc_044",
   "kind": "flavor",
-  "name": "研究员",
+  "name": "老人",
   "map": "town_mist",
   "x": 10,
   "y": 8,
   "dir": "down",
   "dialogue": [
-   "迷雾村的夜晚，常能听见幽灵怪兽的低语。"
+   "据说图鉴收录全部怪兽的人，能见到博士的秘密。"
   ]
  },
  {
   "id": "npc_045",
   "kind": "flavor",
-  "name": "老人",
+  "name": "居民",
   "map": "town_mist",
   "x": 14,
   "y": 12,
   "dir": "down",
   "dialogue": [
-   "努力训练吧，强大的羁绊会回应你的心意。"
+   "据说收集齐八枚徽章，就能挑战精灵联盟。"
   ]
  },
  {
@@ -881,13 +873,13 @@ window.MQ.npcs = [
  {
   "id": "npc_048",
   "kind": "flavor",
-  "name": "老人",
+  "name": "商人",
   "map": "int_house_town_ember",
   "x": 8,
   "y": 3,
   "dir": "down",
   "dialogue": [
-   "我相信总有一天，人类与怪兽能真正心意相通。"
+   "迷雾村的夜晚，常能听见幽灵怪兽的低语。"
   ]
  },
  {
@@ -901,17 +893,21 @@ window.MQ.npcs = [
   "dir": "right",
   "team": [
    {
-    "dex": 141,
-    "level": 53
+    "dex": 84,
+    "level": 35
    },
    {
-    "dex": 198,
-    "level": 52
+    "dex": 188,
+    "level": 35
+   },
+   {
+    "dex": 127,
+    "level": 33
    }
   ],
-  "money": 1260,
+  "money": 1236,
   "sight": 3,
-  "preBattle": "我训练我的伙伴们很久了！",
+  "preBattle": "我可不会手下留情！",
   "postBattle": "可恶……你比我想象的要强。",
   "defeated": false
  },
@@ -926,18 +922,22 @@ window.MQ.npcs = [
   "dir": "left",
   "team": [
    {
-    "dex": 141,
-    "level": 51
+    "dex": 198,
+    "level": 34
    },
    {
-    "dex": 48,
-    "level": 51
+    "dex": 214,
+    "level": 35
+   },
+   {
+    "dex": 116,
+    "level": 35
    }
   ],
-  "money": 1224,
+  "money": 1248,
   "sight": 3,
-  "preBattle": "我可不会手下留情！",
-  "postBattle": "可恶……你比我想象的要强。",
+  "preBattle": "想从我身边过去？先打赢我再说！",
+  "postBattle": "这就是实力的差距吗……",
   "defeated": false
  },
  {
@@ -955,23 +955,23 @@ window.MQ.npcs = [
   },
   "team": [
    {
-    "dex": 157,
-    "level": 56
+    "dex": 115,
+    "level": 34
    },
    {
     "dex": 115,
-    "level": 56
+    "level": 36
    },
    {
-    "dex": 157,
-    "level": 56
+    "dex": 14,
+    "level": 36
    },
    {
-    "dex": 127,
-    "level": 56
+    "dex": 198,
+    "level": 37
    }
   ],
-  "money": 6720,
+  "money": 4290,
   "preBattle": "我是熔火城道馆馆主，专精火属性！让我看看你的觉悟！",
   "postBattle": "了不起……这枚烈焰徽章是你应得的。",
   "defeated": false
@@ -979,25 +979,25 @@ window.MQ.npcs = [
  {
   "id": "npc_052",
   "kind": "flavor",
-  "name": "商人",
+  "name": "少女",
   "map": "town_ember",
   "x": 10,
   "y": 8,
   "dir": "down",
   "dialogue": [
-   "我相信总有一天，人类与怪兽能真正心意相通。"
+   "黯灭组织想唤醒虚空之兽，那太危险了！"
   ]
  },
  {
   "id": "npc_053",
   "kind": "flavor",
-  "name": "居民",
+  "name": "渔夫",
   "map": "town_ember",
   "x": 14,
   "y": 12,
   "dir": "down",
   "dialogue": [
-   "冠军是这片土地最强的训练师，无人能及。"
+   "速度快的怪兽通常能抢先出招。"
   ]
  },
  {
@@ -1042,7 +1042,7 @@ window.MQ.npcs = [
   "y": 3,
   "dir": "down",
   "dialogue": [
-   "我年轻时也是个训练师，如今只想看看后辈们的成长。"
+   "据说图鉴收录全部怪兽的人，能见到博士的秘密。"
   ]
  },
  {
@@ -1056,18 +1056,26 @@ window.MQ.npcs = [
   "dir": "right",
   "team": [
    {
-    "dex": 26,
-    "level": 62
+    "dex": 194,
+    "level": 42
    },
    {
     "dex": 26,
-    "level": 61
+    "level": 41
+   },
+   {
+    "dex": 165,
+    "level": 40
+   },
+   {
+    "dex": 26,
+    "level": 42
    }
   ],
-  "money": 1476,
+  "money": 1980,
   "sight": 3,
   "preBattle": "想从我身边过去？先打赢我再说！",
-  "postBattle": "可恶……你比我想象的要强。",
+  "postBattle": "我会变得更强的！",
   "defeated": false
  },
  {
@@ -1081,18 +1089,26 @@ window.MQ.npcs = [
   "dir": "left",
   "team": [
    {
+    "dex": 26,
+    "level": 40
+   },
+   {
     "dex": 194,
-    "level": 62
+    "level": 42
    },
    {
     "dex": 165,
-    "level": 60
+    "level": 40
+   },
+   {
+    "dex": 212,
+    "level": 41
    }
   ],
-  "money": 1464,
+  "money": 1956,
   "sight": 3,
-  "preBattle": "我训练我的伙伴们很久了！",
-  "postBattle": "看来你和怪兽的羁绊更深。",
+  "preBattle": "我可不会手下留情！",
+  "postBattle": "我会变得更强的！",
   "defeated": false
  },
  {
@@ -1110,23 +1126,27 @@ window.MQ.npcs = [
   },
   "team": [
    {
-    "dex": 194,
-    "level": 64
+    "dex": 26,
+    "level": 43
    },
    {
     "dex": 26,
-    "level": 65
+    "level": 43
    },
    {
     "dex": 26,
-    "level": 65
+    "level": 42
    },
    {
     "dex": 26,
-    "level": 64
+    "level": 41
+   },
+   {
+    "dex": 213,
+    "level": 44
    }
   ],
-  "money": 7740,
+  "money": 6390,
   "preBattle": "我是霜寒镇道馆馆主，专精冰属性！让我看看你的觉悟！",
   "postBattle": "了不起……这枚霜华徽章是你应得的。",
   "defeated": false
@@ -1134,25 +1154,25 @@ window.MQ.npcs = [
  {
   "id": "npc_060",
   "kind": "flavor",
-  "name": "老人",
+  "name": "少年",
   "map": "town_frost",
   "x": 10,
   "y": 8,
   "dir": "down",
   "dialogue": [
-   "风从天穹市的方向吹来，带着龙的气息。"
+   "努力训练吧，强大的羁绊会回应你的心意。"
   ]
  },
  {
   "id": "npc_061",
   "kind": "flavor",
-  "name": "研究员",
+  "name": "老人",
   "map": "town_frost",
   "x": 14,
   "y": 12,
   "dir": "down",
   "dialogue": [
-   "雷鸣市的发电厂是全地区的能源命脉。"
+   "冠军是这片土地最强的训练师，无人能及。"
   ]
  },
  {
@@ -1191,13 +1211,13 @@ window.MQ.npcs = [
  {
   "id": "npc_064",
   "kind": "flavor",
-  "name": "商人",
+  "name": "少年",
   "map": "int_house_town_sky",
   "x": 8,
   "y": 3,
   "dir": "down",
   "dialogue": [
-   "黯灭组织最近频繁出没，旅行要当心。"
+   "在高高的草丛里行走，很容易遇见野生怪兽。"
   ]
  },
  {
@@ -1211,18 +1231,26 @@ window.MQ.npcs = [
   "dir": "right",
   "team": [
    {
-    "dex": 138,
-    "level": 67
+    "dex": 142,
+    "level": 46
    },
    {
-    "dex": 67,
-    "level": 68
+    "dex": 119,
+    "level": 46
+   },
+   {
+    "dex": 66,
+    "level": 47
+   },
+   {
+    "dex": 138,
+    "level": 46
    }
   ],
-  "money": 1620,
+  "money": 2220,
   "sight": 3,
-  "preBattle": "想从我身边过去？先打赢我再说！",
-  "postBattle": "这就是实力的差距吗……",
+  "preBattle": "我训练我的伙伴们很久了！",
+  "postBattle": "可恶……你比我想象的要强。",
   "defeated": false
  },
  {
@@ -1236,17 +1264,25 @@ window.MQ.npcs = [
   "dir": "left",
   "team": [
    {
-    "dex": 65,
-    "level": 66
+    "dex": 170,
+    "level": 48
+   },
+   {
+    "dex": 72,
+    "level": 47
    },
    {
     "dex": 119,
-    "level": 68
+    "level": 48
+   },
+   {
+    "dex": 119,
+    "level": 48
    }
   ],
-  "money": 1608,
+  "money": 2292,
   "sight": 3,
-  "preBattle": "哈，又来一个想挑战联盟的小鬼。",
+  "preBattle": "让你见识见识真正的实力！",
   "postBattle": "了不起，收下这点谢礼吧。",
   "defeated": false
  },
@@ -1265,23 +1301,27 @@ window.MQ.npcs = [
   },
   "team": [
    {
-    "dex": 67,
-    "level": 71
+    "dex": 170,
+    "level": 47
+   },
+   {
+    "dex": 65,
+    "level": 49
    },
    {
     "dex": 170,
-    "level": 70
+    "level": 49
    },
    {
-    "dex": 138,
-    "level": 70
+    "dex": 72,
+    "level": 48
    },
    {
-    "dex": 170,
-    "level": 70
+    "dex": 66,
+    "level": 50
    }
   ],
-  "money": 8430,
+  "money": 7290,
   "preBattle": "我是天穹市道馆馆主，专精龙属性！让我看看你的觉悟！",
   "postBattle": "了不起……这枚苍龙徽章是你应得的。",
   "defeated": false
@@ -1289,150 +1329,130 @@ window.MQ.npcs = [
  {
   "id": "npc_068",
   "kind": "flavor",
-  "name": "渔夫",
+  "name": "登山客",
   "map": "town_sky",
   "x": 10,
   "y": 8,
   "dir": "down",
   "dialogue": [
-   "霜寒镇的冰雕节是一年中最热闹的时候。"
+   "努力训练吧，强大的羁绊会回应你的心意。"
   ]
  },
  {
   "id": "npc_069",
   "kind": "flavor",
-  "name": "研究员",
+  "name": "渔夫",
   "map": "town_sky",
   "x": 14,
   "y": 12,
   "dir": "down",
   "dialogue": [
-   "据说图鉴收录全部怪兽的人，能见到博士的秘密。"
+   "你知道吗？怪兽的属性相克是战斗取胜的关键。"
   ]
  },
  {
   "id": "npc_070",
   "kind": "trainer",
-  "trainerClass": "少年",
-  "name": "少年",
+  "trainerClass": "黑衣人",
+  "name": "黑衣人",
   "map": "route_01",
-  "x": 6,
-  "y": 8,
+  "x": 5,
+  "y": 6,
   "dir": "down",
   "team": [
    {
-    "dex": 231,
-    "level": 7
-   },
-   {
-    "dex": 113,
-    "level": 8
-   },
-   {
-    "dex": 188,
-    "level": 7
+    "dex": 83,
+    "level": 5
    }
   ],
-  "money": 264,
-  "sight": 0,
-  "preBattle": "想从我身边过去？先打赢我再说！",
-  "postBattle": "看来你和怪兽的羁绊更深。",
+  "money": 60,
+  "sight": 3,
+  "preBattle": "我训练我的伙伴们很久了！",
+  "postBattle": "这就是实力的差距吗……",
   "defeated": false
  },
  {
   "id": "npc_071",
   "kind": "trainer",
-  "trainerClass": "黑衣人",
-  "name": "黑衣人",
+  "trainerClass": "富家少爷",
+  "name": "富家少爷",
   "map": "route_01",
-  "x": 12,
-  "y": 9,
+  "x": 7,
+  "y": 14,
   "dir": "down",
   "team": [
    {
-    "dex": 216,
-    "level": 7
-   },
-   {
-    "dex": 214,
-    "level": 8
-   },
-   {
-    "dex": 22,
-    "level": 8
+    "dex": 138,
+    "level": 4
    }
   ],
-  "money": 276,
-  "sight": 0,
-  "preBattle": "让你见识见识真正的实力！",
-  "postBattle": "这就是实力的差距吗……",
+  "money": 48,
+  "sight": 2,
+  "preBattle": "我可不会手下留情！",
+  "postBattle": "我会变得更强的！",
   "defeated": false
  },
  {
   "id": "npc_072",
   "kind": "trainer",
-  "trainerClass": "美女",
-  "name": "美女",
+  "trainerClass": "富家少爷",
+  "name": "富家少爷",
   "map": "route_01",
-  "x": 17,
-  "y": 13,
+  "x": 14,
+  "y": 11,
   "dir": "down",
   "team": [
    {
-    "dex": 145,
-    "level": 7
-   },
-   {
-    "dex": 9,
-    "level": 6
+    "dex": 81,
+    "level": 4
    }
   ],
-  "money": 156,
-  "sight": 1,
-  "preBattle": "我可不会手下留情！",
-  "postBattle": "看来你和怪兽的羁绊更深。",
+  "money": 48,
+  "sight": 3,
+  "preBattle": "哈，又来一个想挑战联盟的小鬼。",
+  "postBattle": "可恶……你比我想象的要强。",
   "defeated": false
  },
  {
   "id": "npc_073",
   "kind": "trainer",
-  "trainerClass": "少女",
-  "name": "少女",
+  "trainerClass": "黑衣人",
+  "name": "黑衣人",
   "map": "route_01",
-  "x": 5,
-  "y": 16,
+  "x": 22,
+  "y": 4,
   "dir": "down",
   "team": [
    {
-    "dex": 230,
-    "level": 7
+    "dex": 83,
+    "level": 5
    }
   ],
-  "money": 84,
-  "sight": 3,
-  "preBattle": "让你见识见识真正的实力！",
-  "postBattle": "这就是实力的差距吗……",
+  "money": 60,
+  "sight": 0,
+  "preBattle": "我可不会手下留情！",
+  "postBattle": "了不起，收下这点谢礼吧。",
   "defeated": false
  },
  {
   "id": "npc_074",
   "kind": "trainer",
-  "trainerClass": "钓鱼手",
-  "name": "钓鱼手",
-  "map": "route_01",
-  "x": 21,
-  "y": 11,
+  "trainerClass": "少年",
+  "name": "少年",
+  "map": "route_02",
+  "x": 4,
+  "y": 4,
   "dir": "down",
   "team": [
    {
-    "dex": 5,
-    "level": 7
+    "dex": 83,
+    "level": 9
    }
   ],
-  "money": 84,
+  "money": 108,
   "sight": 3,
-  "preBattle": "我可不会手下留情！",
-  "postBattle": "这就是实力的差距吗……",
+  "preBattle": "让你见识见识真正的实力！",
+  "postBattle": "我会变得更强的！",
   "defeated": false
  },
  {
@@ -1446,11 +1466,11 @@ window.MQ.npcs = [
   "dir": "down",
   "team": [
    {
-    "dex": 1,
-    "level": 10
+    "dex": 21,
+    "level": 8
    }
   ],
-  "money": 120,
+  "money": 96,
   "sight": 0,
   "preBattle": "让你见识见识真正的实力！",
   "postBattle": "可恶……你比我想象的要强。",
@@ -1459,71 +1479,63 @@ window.MQ.npcs = [
  {
   "id": "npc_076",
   "kind": "trainer",
-  "trainerClass": "钓鱼手",
-  "name": "钓鱼手",
+  "trainerClass": "美女",
+  "name": "美女",
   "map": "route_02",
   "x": 13,
   "y": 9,
   "dir": "down",
   "team": [
    {
-    "dex": 231,
-    "level": 11
-   },
-   {
-    "dex": 22,
-    "level": 12
-   },
-   {
-    "dex": 23,
-    "level": 10
+    "dex": 204,
+    "level": 9
    }
   ],
-  "money": 396,
+  "money": 108,
   "sight": 0,
-  "preBattle": "我可不会手下留情！",
-  "postBattle": "了不起，收下这点谢礼吧。",
+  "preBattle": "哈，又来一个想挑战联盟的小鬼。",
+  "postBattle": "可恶……你比我想象的要强。",
   "defeated": false
  },
  {
   "id": "npc_077",
   "kind": "trainer",
-  "trainerClass": "登山男",
-  "name": "登山男",
+  "trainerClass": "少年",
+  "name": "少年",
   "map": "route_02",
-  "x": 14,
-  "y": 15,
+  "x": 4,
+  "y": 6,
   "dir": "down",
   "team": [
    {
-    "dex": 7,
-    "level": 10
+    "dex": 203,
+    "level": 9
    }
   ],
-  "money": 120,
-  "sight": 1,
-  "preBattle": "哈，又来一个想挑战联盟的小鬼。",
+  "money": 108,
+  "sight": 3,
+  "preBattle": "想从我身边过去？先打赢我再说！",
   "postBattle": "可恶……你比我想象的要强。",
   "defeated": false
  },
  {
   "id": "npc_078",
   "kind": "trainer",
-  "trainerClass": "美女",
-  "name": "美女",
+  "trainerClass": "登山男",
+  "name": "登山男",
   "map": "route_02",
-  "x": 9,
-  "y": 4,
+  "x": 10,
+  "y": 8,
   "dir": "down",
   "team": [
    {
-    "dex": 3,
-    "level": 10
+    "dex": 21,
+    "level": 8
    }
   ],
-  "money": 120,
-  "sight": 1,
-  "preBattle": "哈，又来一个想挑战联盟的小鬼。",
+  "money": 96,
+  "sight": 0,
+  "preBattle": "想从我身边过去？先打赢我再说！",
   "postBattle": "看来你和怪兽的羁绊更深。",
   "defeated": false
  },
@@ -1538,11 +1550,11 @@ window.MQ.npcs = [
   "dir": "down",
   "team": [
    {
-    "dex": 99,
-    "level": 14
+    "dex": 134,
+    "level": 11
    }
   ],
-  "money": 168,
+  "money": 132,
   "sight": 0,
   "preBattle": "想从我身边过去？先打赢我再说！",
   "postBattle": "看来你和怪兽的羁绊更深。",
@@ -1551,202 +1563,116 @@ window.MQ.npcs = [
  {
   "id": "npc_080",
   "kind": "trainer",
-  "trainerClass": "富家少爷",
-  "name": "富家少爷",
+  "trainerClass": "上班族",
+  "name": "上班族",
   "map": "forest_verdant",
   "x": 16,
   "y": 11,
   "dir": "down",
   "team": [
    {
-    "dex": 98,
-    "level": 12
-   },
-   {
-    "dex": 44,
-    "level": 13
-   },
-   {
-    "dex": 185,
-    "level": 13
+    "dex": 134,
+    "level": 9
    }
   ],
-  "money": 456,
-  "sight": 1,
-  "preBattle": "让你见识见识真正的实力！",
-  "postBattle": "看来你和怪兽的羁绊更深。",
+  "money": 108,
+  "sight": 0,
+  "preBattle": "我训练我的伙伴们很久了！",
+  "postBattle": "我会变得更强的！",
   "defeated": false
  },
  {
   "id": "npc_081",
   "kind": "trainer",
-  "trainerClass": "少年",
-  "name": "少年",
+  "trainerClass": "美女",
+  "name": "美女",
   "map": "forest_verdant",
-  "x": 20,
-  "y": 12,
+  "x": 11,
+  "y": 13,
   "dir": "down",
   "team": [
    {
-    "dex": 131,
-    "level": 12
-   },
-   {
-    "dex": 44,
-    "level": 12
-   },
-   {
-    "dex": 66,
-    "level": 12
+    "dex": 63,
+    "level": 11
    }
   ],
-  "money": 432,
-  "sight": 1,
-  "preBattle": "想从我身边过去？先打赢我再说！",
-  "postBattle": "这就是实力的差距吗……",
+  "money": 132,
+  "sight": 2,
+  "preBattle": "我可不会手下留情！",
+  "postBattle": "可恶……你比我想象的要强。",
   "defeated": false
  },
  {
   "id": "npc_082",
   "kind": "trainer",
-  "trainerClass": "登山男",
-  "name": "登山男",
+  "trainerClass": "少年",
+  "name": "少年",
   "map": "forest_verdant",
-  "x": 13,
-  "y": 7,
+  "x": 4,
+  "y": 6,
   "dir": "down",
   "team": [
    {
-    "dex": 78,
-    "level": 12
-   },
-   {
-    "dex": 132,
-    "level": 14
+    "dex": 57,
+    "level": 10
    }
   ],
-  "money": 312,
-  "sight": 1,
-  "preBattle": "哈，又来一个想挑战联盟的小鬼。",
-  "postBattle": "这就是实力的差距吗……",
+  "money": 120,
+  "sight": 0,
+  "preBattle": "我可不会手下留情！",
+  "postBattle": "我会变得更强的！",
   "defeated": false
  },
  {
   "id": "npc_083",
   "kind": "trainer",
-  "trainerClass": "美女",
-  "name": "美女",
+  "trainerClass": "上班族",
+  "name": "上班族",
   "map": "forest_verdant",
-  "x": 8,
-  "y": 10,
+  "x": 9,
+  "y": 9,
   "dir": "down",
   "team": [
    {
-    "dex": 43,
-    "level": 14
-   },
-   {
-    "dex": 80,
-    "level": 13
-   },
-   {
-    "dex": 97,
-    "level": 14
+    "dex": 56,
+    "level": 11
    }
   ],
-  "money": 492,
-  "sight": 0,
-  "preBattle": "让你见识见识真正的实力！",
-  "postBattle": "可恶……你比我想象的要强。",
-  "defeated": false
- },
- {
-  "id": "npc_084",
-  "kind": "trainer",
-  "trainerClass": "黑衣人",
-  "name": "黑衣人",
-  "map": "route_03",
-  "x": 10,
-  "y": 15,
-  "dir": "down",
-  "team": [
-   {
-    "dex": 198,
-    "level": 16
-   },
-   {
-    "dex": 198,
-    "level": 17
-   }
-  ],
-  "money": 396,
-  "sight": 1,
+  "money": 132,
+  "sight": 3,
   "preBattle": "哈，又来一个想挑战联盟的小鬼。",
   "postBattle": "看来你和怪兽的羁绊更深。",
   "defeated": false
  },
  {
-  "id": "npc_085",
+  "id": "npc_084",
   "kind": "trainer",
-  "trainerClass": "富家少爷",
-  "name": "富家少爷",
-  "map": "route_03",
-  "x": 14,
+  "trainerClass": "登山男",
+  "name": "登山男",
+  "map": "forest_verdant",
+  "x": 17,
   "y": 6,
   "dir": "down",
   "team": [
    {
-    "dex": 122,
-    "level": 18
-   },
-   {
-    "dex": 157,
-    "level": 17
-   },
-   {
-    "dex": 198,
-    "level": 18
+    "dex": 174,
+    "level": 9
    }
   ],
-  "money": 636,
-  "sight": 1,
-  "preBattle": "想从我身边过去？先打赢我再说！",
+  "money": 108,
+  "sight": 2,
+  "preBattle": "哈，又来一个想挑战联盟的小鬼。",
   "postBattle": "我会变得更强的！",
   "defeated": false
  },
  {
-  "id": "npc_086",
+  "id": "npc_085",
   "kind": "trainer",
-  "trainerClass": "上班族",
-  "name": "上班族",
+  "trainerClass": "登山男",
+  "name": "登山男",
   "map": "route_03",
-  "x": 12,
-  "y": 3,
-  "dir": "down",
-  "team": [
-   {
-    "dex": 137,
-    "level": 17
-   },
-   {
-    "dex": 136,
-    "level": 16
-   }
-  ],
-  "money": 396,
-  "sight": 0,
-  "preBattle": "我训练我的伙伴们很久了！",
-  "postBattle": "看来你和怪兽的羁绊更深。",
-  "defeated": false
- },
- {
-  "id": "npc_087",
-  "kind": "trainer",
-  "trainerClass": "空手道家",
-  "name": "空手道家",
-  "map": "route_03",
-  "x": 22,
-  "y": 13,
+  "x": 21,
+  "y": 7,
   "dir": "down",
   "team": [
    {
@@ -1755,61 +1681,91 @@ window.MQ.npcs = [
    }
   ],
   "money": 192,
-  "sight": 0,
-  "preBattle": "哈，又来一个想挑战联盟的小鬼。",
+  "sight": 1,
+  "preBattle": "让你见识见识真正的实力！",
   "postBattle": "看来你和怪兽的羁绊更深。",
+  "defeated": false
+ },
+ {
+  "id": "npc_086",
+  "kind": "trainer",
+  "trainerClass": "富家少爷",
+  "name": "富家少爷",
+  "map": "route_03",
+  "x": 8,
+  "y": 10,
+  "dir": "down",
+  "team": [
+   {
+    "dex": 172,
+    "level": 15
+   }
+  ],
+  "money": 180,
+  "sight": 3,
+  "preBattle": "让你见识见识真正的实力！",
+  "postBattle": "了不起，收下这点谢礼吧。",
+  "defeated": false
+ },
+ {
+  "id": "npc_087",
+  "kind": "trainer",
+  "trainerClass": "少年",
+  "name": "少年",
+  "map": "route_03",
+  "x": 21,
+  "y": 9,
+  "dir": "down",
+  "team": [
+   {
+    "dex": 33,
+    "level": 15
+   }
+  ],
+  "money": 180,
+  "sight": 1,
+  "preBattle": "我可不会手下留情！",
+  "postBattle": "这就是实力的差距吗……",
   "defeated": false
  },
  {
   "id": "npc_088",
   "kind": "trainer",
-  "trainerClass": "登山男",
-  "name": "登山男",
+  "trainerClass": "钓鱼手",
+  "name": "钓鱼手",
   "map": "route_03",
-  "x": 22,
-  "y": 4,
+  "x": 12,
+  "y": 11,
   "dir": "down",
   "team": [
    {
-    "dex": 108,
-    "level": 17
-   },
-   {
-    "dex": 197,
-    "level": 18
+    "dex": 33,
+    "level": 15
    }
   ],
-  "money": 420,
-  "sight": 1,
-  "preBattle": "我可不会手下留情！",
-  "postBattle": "可恶……你比我想象的要强。",
+  "money": 180,
+  "sight": 3,
+  "preBattle": "我训练我的伙伴们很久了！",
+  "postBattle": "这就是实力的差距吗……",
   "defeated": false
  },
  {
   "id": "npc_089",
   "kind": "trainer",
-  "trainerClass": "上班族",
-  "name": "上班族",
-  "map": "route_04",
-  "x": 17,
-  "y": 10,
+  "trainerClass": "钓鱼手",
+  "name": "钓鱼手",
+  "map": "route_03",
+  "x": 8,
+  "y": 6,
   "dir": "down",
   "team": [
    {
-    "dex": 46,
-    "level": 22
-   },
-   {
-    "dex": 103,
-    "level": 22
-   },
-   {
-    "dex": 198,
-    "level": 22
+    "dex": 35,
+    "level": 16
    }
   ],
-  "money": 792,
-  "sight": 3,
+  "money": 192,
+  "sight": 1,
   "preBattle": "我训练我的伙伴们很久了！",
   "postBattle": "可恶……你比我想象的要强。",
   "defeated": false
@@ -1817,309 +1773,277 @@ window.MQ.npcs = [
  {
   "id": "npc_090",
   "kind": "trainer",
-  "trainerClass": "研究员",
-  "name": "研究员",
+  "trainerClass": "登山男",
+  "name": "登山男",
   "map": "route_04",
-  "x": 10,
-  "y": 8,
+  "x": 13,
+  "y": 13,
   "dir": "down",
   "team": [
    {
-    "dex": 159,
-    "level": 22
+    "dex": 167,
+    "level": 21
    },
    {
-    "dex": 158,
+    "dex": 198,
     "level": 20
    }
   ],
-  "money": 504,
+  "money": 492,
   "sight": 3,
-  "preBattle": "想从我身边过去？先打赢我再说！",
+  "preBattle": "我可不会手下留情！",
   "postBattle": "了不起，收下这点谢礼吧。",
   "defeated": false
  },
  {
   "id": "npc_091",
   "kind": "trainer",
-  "trainerClass": "研究员",
-  "name": "研究员",
+  "trainerClass": "登山男",
+  "name": "登山男",
   "map": "route_04",
   "x": 19,
-  "y": 7,
+  "y": 16,
   "dir": "down",
   "team": [
    {
-    "dex": 141,
-    "level": 21
-   },
-   {
-    "dex": 46,
-    "level": 22
-   },
-   {
-    "dex": 158,
+    "dex": 198,
     "level": 20
    }
   ],
-  "money": 756,
+  "money": 240,
+  "sight": 1,
+  "preBattle": "让你见识见识真正的实力！",
+  "postBattle": "这就是实力的差距吗……",
+  "defeated": false
+ },
+ {
+  "id": "npc_092",
+  "kind": "trainer",
+  "trainerClass": "空手道家",
+  "name": "空手道家",
+  "map": "route_04",
+  "x": 22,
+  "y": 13,
+  "dir": "down",
+  "team": [
+   {
+    "dex": 172,
+    "level": 21
+   }
+  ],
+  "money": 252,
+  "sight": 0,
+  "preBattle": "我训练我的伙伴们很久了！",
+  "postBattle": "看来你和怪兽的羁绊更深。",
+  "defeated": false
+ },
+ {
+  "id": "npc_093",
+  "kind": "trainer",
+  "trainerClass": "研究员",
+  "name": "研究员",
+  "map": "route_04",
+  "x": 17,
+  "y": 12,
+  "dir": "down",
+  "team": [
+   {
+    "dex": 45,
+    "level": 22
+   },
+   {
+    "dex": 167,
+    "level": 20
+   }
+  ],
+  "money": 504,
   "sight": 3,
   "preBattle": "我可不会手下留情！",
   "postBattle": "看来你和怪兽的羁绊更深。",
   "defeated": false
  },
  {
-  "id": "npc_092",
-  "kind": "trainer",
-  "trainerClass": "少女",
-  "name": "少女",
-  "map": "route_04",
-  "x": 3,
-  "y": 16,
-  "dir": "down",
-  "team": [
-   {
-    "dex": 35,
-    "level": 22
-   }
-  ],
-  "money": 264,
-  "sight": 2,
-  "preBattle": "想从我身边过去？先打赢我再说！",
-  "postBattle": "可恶……你比我想象的要强。",
-  "defeated": false
- },
- {
-  "id": "npc_093",
-  "kind": "trainer",
-  "trainerClass": "登山男",
-  "name": "登山男",
-  "map": "route_04",
-  "x": 16,
-  "y": 12,
-  "dir": "down",
-  "team": [
-   {
-    "dex": 71,
-    "level": 20
-   }
-  ],
-  "money": 240,
-  "sight": 3,
-  "preBattle": "让你见识见识真正的实力！",
-  "postBattle": "我会变得更强的！",
-  "defeated": false
- },
- {
   "id": "npc_094",
   "kind": "trainer",
-  "trainerClass": "美女",
-  "name": "美女",
-  "map": "cave_coral",
-  "x": 7,
-  "y": 7,
+  "trainerClass": "上班族",
+  "name": "上班族",
+  "map": "route_05",
+  "x": 17,
+  "y": 5,
   "dir": "down",
   "team": [
    {
-    "dex": 141,
-    "level": 22
+    "dex": 12,
+    "level": 27
    },
    {
-    "dex": 167,
-    "level": 22
-   },
-   {
-    "dex": 129,
-    "level": 22
+    "dex": 53,
+    "level": 28
    }
   ],
-  "money": 792,
+  "money": 660,
   "sight": 3,
-  "preBattle": "让你见识见识真正的实力！",
-  "postBattle": "了不起，收下这点谢礼吧。",
+  "preBattle": "我训练我的伙伴们很久了！",
+  "postBattle": "这就是实力的差距吗……",
   "defeated": false
  },
  {
   "id": "npc_095",
   "kind": "trainer",
-  "trainerClass": "空手道家",
-  "name": "空手道家",
-  "map": "cave_coral",
-  "x": 16,
-  "y": 6,
-  "dir": "down",
-  "team": [
-   {
-    "dex": 109,
-    "level": 24
-   },
-   {
-    "dex": 160,
-    "level": 24
-   }
-  ],
-  "money": 576,
-  "sight": 0,
-  "preBattle": "让你见识见识真正的实力！",
-  "postBattle": "这就是实力的差距吗……",
-  "defeated": false
- },
- {
-  "id": "npc_096",
-  "kind": "trainer",
-  "trainerClass": "空手道家",
-  "name": "空手道家",
-  "map": "cave_coral",
-  "x": 14,
-  "y": 14,
-  "dir": "down",
-  "team": [
-   {
-    "dex": 34,
-    "level": 22
-   },
-   {
-    "dex": 115,
-    "level": 22
-   },
-   {
-    "dex": 173,
-    "level": 22
-   }
-  ],
-  "money": 792,
-  "sight": 1,
-  "preBattle": "我训练我的伙伴们很久了！",
-  "postBattle": "了不起，收下这点谢礼吧。",
-  "defeated": false
- },
- {
-  "id": "npc_097",
-  "kind": "trainer",
   "trainerClass": "少年",
   "name": "少年",
-  "map": "route_05",
-  "x": 9,
-  "y": 16,
-  "dir": "down",
-  "team": [
-   {
-    "dex": 201,
-    "level": 27
-   },
-   {
-    "dex": 92,
-    "level": 27
-   }
-  ],
-  "money": 648,
-  "sight": 0,
-  "preBattle": "我可不会手下留情！",
-  "postBattle": "可恶……你比我想象的要强。",
-  "defeated": false
- },
- {
-  "id": "npc_098",
-  "kind": "trainer",
-  "trainerClass": "黑衣人",
-  "name": "黑衣人",
-  "map": "route_05",
-  "x": 15,
-  "y": 6,
-  "dir": "down",
-  "team": [
-   {
-    "dex": 199,
-    "level": 28
-   },
-   {
-    "dex": 92,
-    "level": 28
-   },
-   {
-    "dex": 17,
-    "level": 27
-   }
-  ],
-  "money": 996,
-  "sight": 3,
-  "preBattle": "让你见识见识真正的实力！",
-  "postBattle": "了不起，收下这点谢礼吧。",
-  "defeated": false
- },
- {
-  "id": "npc_099",
-  "kind": "trainer",
-  "trainerClass": "美女",
-  "name": "美女",
-  "map": "route_05",
-  "x": 8,
-  "y": 9,
-  "dir": "down",
-  "team": [
-   {
-    "dex": 161,
-    "level": 28
-   }
-  ],
-  "money": 336,
-  "sight": 3,
-  "preBattle": "我可不会手下留情！",
-  "postBattle": "可恶……你比我想象的要强。",
-  "defeated": false
- },
- {
-  "id": "npc_100",
-  "kind": "trainer",
-  "trainerClass": "登山男",
-  "name": "登山男",
   "map": "route_05",
   "x": 8,
   "y": 11,
   "dir": "down",
   "team": [
    {
-    "dex": 190,
-    "level": 28
-   },
-   {
-    "dex": 201,
+    "dex": 213,
     "level": 28
    }
   ],
-  "money": 672,
-  "sight": 3,
+  "money": 336,
+  "sight": 2,
+  "preBattle": "我训练我的伙伴们很久了！",
+  "postBattle": "我会变得更强的！",
+  "defeated": false
+ },
+ {
+  "id": "npc_096",
+  "kind": "trainer",
+  "trainerClass": "美女",
+  "name": "美女",
+  "map": "route_05",
+  "x": 15,
+  "y": 11,
+  "dir": "down",
+  "team": [
+   {
+    "dex": 192,
+    "level": 26
+   },
+   {
+    "dex": 12,
+    "level": 27
+   }
+  ],
+  "money": 636,
+  "sight": 0,
   "preBattle": "想从我身边过去？先打赢我再说！",
+  "postBattle": "我会变得更强的！",
+  "defeated": false
+ },
+ {
+  "id": "npc_097",
+  "kind": "trainer",
+  "trainerClass": "富家少爷",
+  "name": "富家少爷",
+  "map": "route_05",
+  "x": 19,
+  "y": 15,
+  "dir": "down",
+  "team": [
+   {
+    "dex": 192,
+    "level": 26
+   },
+   {
+    "dex": 53,
+    "level": 26
+   }
+  ],
+  "money": 624,
+  "sight": 2,
+  "preBattle": "我可不会手下留情！",
+  "postBattle": "我会变得更强的！",
+  "defeated": false
+ },
+ {
+  "id": "npc_098",
+  "kind": "trainer",
+  "trainerClass": "美女",
+  "name": "美女",
+  "map": "route_05",
+  "x": 21,
+  "y": 13,
+  "dir": "down",
+  "team": [
+   {
+    "dex": 25,
+    "level": 27
+   }
+  ],
+  "money": 324,
+  "sight": 1,
+  "preBattle": "哈，又来一个想挑战联盟的小鬼。",
   "postBattle": "了不起，收下这点谢礼吧。",
+  "defeated": false
+ },
+ {
+  "id": "npc_099",
+  "kind": "trainer",
+  "trainerClass": "少女",
+  "name": "少女",
+  "map": "route_05",
+  "x": 16,
+  "y": 8,
+  "dir": "down",
+  "team": [
+   {
+    "dex": 12,
+    "level": 26
+   }
+  ],
+  "money": 312,
+  "sight": 2,
+  "preBattle": "我可不会手下留情！",
+  "postBattle": "看来你和怪兽的羁绊更深。",
+  "defeated": false
+ },
+ {
+  "id": "npc_100",
+  "kind": "trainer",
+  "trainerClass": "黑衣人",
+  "name": "黑衣人",
+  "map": "route_06",
+  "x": 20,
+  "y": 7,
+  "dir": "down",
+  "team": [
+   {
+    "dex": 180,
+    "level": 33
+   }
+  ],
+  "money": 396,
+  "sight": 3,
+  "preBattle": "我训练我的伙伴们很久了！",
+  "postBattle": "这就是实力的差距吗……",
   "defeated": false
  },
  {
   "id": "npc_101",
   "kind": "trainer",
-  "trainerClass": "研究员",
-  "name": "研究员",
+  "trainerClass": "少女",
+  "name": "少女",
   "map": "route_06",
-  "x": 5,
-  "y": 10,
+  "x": 13,
+  "y": 7,
   "dir": "down",
   "team": [
    {
-    "dex": 13,
-    "level": 30
+    "dex": 181,
+    "level": 34
    },
    {
-    "dex": 132,
-    "level": 30
-   },
-   {
-    "dex": 64,
-    "level": 30
+    "dex": 87,
+    "level": 32
    }
   ],
-  "money": 1080,
-  "sight": 3,
+  "money": 792,
+  "sight": 0,
   "preBattle": "让你见识见识真正的实力！",
-  "postBattle": "我会变得更强的！",
+  "postBattle": "这就是实力的差距吗……",
   "defeated": false
  },
  {
@@ -2128,27 +2052,27 @@ window.MQ.npcs = [
   "trainerClass": "黑衣人",
   "name": "黑衣人",
   "map": "route_06",
-  "x": 14,
-  "y": 7,
+  "x": 3,
+  "y": 6,
   "dir": "down",
   "team": [
    {
-    "dex": 144,
+    "dex": 47,
     "level": 32
    },
    {
-    "dex": 56,
-    "level": 32
+    "dex": 13,
+    "level": 34
    },
    {
-    "dex": 44,
-    "level": 31
+    "dex": 100,
+    "level": 33
    }
   ],
-  "money": 1140,
+  "money": 1188,
   "sight": 2,
-  "preBattle": "让你见识见识真正的实力！",
-  "postBattle": "可恶……你比我想象的要强。",
+  "preBattle": "哈，又来一个想挑战联盟的小鬼。",
+  "postBattle": "了不起，收下这点谢礼吧。",
   "defeated": false
  },
  {
@@ -2157,312 +2081,83 @@ window.MQ.npcs = [
   "trainerClass": "黑衣人",
   "name": "黑衣人",
   "map": "route_06",
-  "x": 13,
-  "y": 12,
+  "x": 18,
+  "y": 14,
   "dir": "down",
   "team": [
    {
     "dex": 181,
     "level": 32
-   },
-   {
-    "dex": 79,
-    "level": 30
    }
   ],
-  "money": 744,
-  "sight": 3,
-  "preBattle": "我训练我的伙伴们很久了！",
-  "postBattle": "这就是实力的差距吗……",
+  "money": 384,
+  "sight": 2,
+  "preBattle": "让你见识见识真正的实力！",
+  "postBattle": "我会变得更强的！",
   "defeated": false
  },
  {
   "id": "npc_104",
   "kind": "trainer",
-  "trainerClass": "上班族",
-  "name": "上班族",
-  "map": "cave_magma",
-  "x": 8,
-  "y": 9,
+  "trainerClass": "美女",
+  "name": "美女",
+  "map": "route_06",
+  "x": 5,
+  "y": 10,
   "dir": "down",
   "team": [
    {
-    "dex": 127,
-    "level": 36
+    "dex": 96,
+    "level": 34
    },
    {
-    "dex": 19,
+    "dex": 100,
+    "level": 33
+   },
+   {
+    "dex": 64,
     "level": 34
    }
   ],
-  "money": 840,
-  "sight": 3,
-  "preBattle": "想从我身边过去？先打赢我再说！",
-  "postBattle": "可恶……你比我想象的要强。",
+  "money": 1212,
+  "sight": 2,
+  "preBattle": "我可不会手下留情！",
+  "postBattle": "了不起，收下这点谢礼吧。",
   "defeated": false
  },
  {
   "id": "npc_105",
   "kind": "trainer",
-  "trainerClass": "研究员",
-  "name": "研究员",
-  "map": "cave_magma",
-  "x": 6,
-  "y": 15,
+  "trainerClass": "钓鱼手",
+  "name": "钓鱼手",
+  "map": "route_06",
+  "x": 3,
+  "y": 8,
   "dir": "down",
   "team": [
    {
-    "dex": 127,
-    "level": 35
+    "dex": 180,
+    "level": 32
+   },
+   {
+    "dex": 57,
+    "level": 34
    }
   ],
-  "money": 420,
-  "sight": 0,
-  "preBattle": "想从我身边过去？先打赢我再说！",
-  "postBattle": "了不起，收下这点谢礼吧。",
+  "money": 792,
+  "sight": 3,
+  "preBattle": "我可不会手下留情！",
+  "postBattle": "我会变得更强的！",
   "defeated": false
  },
  {
   "id": "npc_106",
   "kind": "trainer",
-  "trainerClass": "研究员",
-  "name": "研究员",
-  "map": "cave_magma",
-  "x": 17,
-  "y": 16,
-  "dir": "down",
-  "team": [
-   {
-    "dex": 69,
-    "level": 36
-   },
-   {
-    "dex": 102,
-    "level": 36
-   },
-   {
-    "dex": 20,
-    "level": 35
-   }
-  ],
-  "money": 1284,
-  "sight": 3,
-  "preBattle": "哈，又来一个想挑战联盟的小鬼。",
-  "postBattle": "看来你和怪兽的羁绊更深。",
-  "defeated": false
- },
- {
-  "id": "npc_107",
-  "kind": "trainer",
-  "trainerClass": "研究员",
-  "name": "研究员",
-  "map": "cave_magma",
-  "x": 21,
-  "y": 13,
-  "dir": "down",
-  "team": [
-   {
-    "dex": 19,
-    "level": 36
-   },
-   {
-    "dex": 124,
-    "level": 36
-   }
-  ],
-  "money": 864,
-  "sight": 0,
-  "preBattle": "让你见识见识真正的实力！",
-  "postBattle": "了不起，收下这点谢礼吧。",
-  "defeated": false
- },
- {
-  "id": "npc_108",
-  "kind": "trainer",
-  "trainerClass": "少女",
-  "name": "少女",
-  "map": "cave_magma",
-  "x": 12,
-  "y": 14,
-  "dir": "down",
-  "team": [
-   {
-    "dex": 20,
-    "level": 35
-   }
-  ],
-  "money": 420,
-  "sight": 2,
-  "preBattle": "我训练我的伙伴们很久了！",
-  "postBattle": "了不起，收下这点谢礼吧。",
-  "defeated": false
- },
- {
-  "id": "npc_109",
-  "kind": "trainer",
-  "trainerClass": "钓鱼手",
-  "name": "钓鱼手",
-  "map": "route_07",
-  "x": 3,
-  "y": 11,
-  "dir": "down",
-  "team": [
-   {
-    "dex": 165,
-    "level": 38
-   },
-   {
-    "dex": 29,
-    "level": 36
-   },
-   {
-    "dex": 90,
-    "level": 37
-   }
-  ],
-  "money": 1332,
-  "sight": 2,
-  "preBattle": "我可不会手下留情！",
-  "postBattle": "这就是实力的差距吗……",
-  "defeated": false
- },
- {
-  "id": "npc_110",
-  "kind": "trainer",
-  "trainerClass": "少女",
-  "name": "少女",
-  "map": "route_07",
-  "x": 19,
-  "y": 3,
-  "dir": "down",
-  "team": [
-   {
-    "dex": 195,
-    "level": 37
-   },
-   {
-    "dex": 29,
-    "level": 38
-   }
-  ],
-  "money": 900,
-  "sight": 1,
-  "preBattle": "让你见识见识真正的实力！",
-  "postBattle": "看来你和怪兽的羁绊更深。",
-  "defeated": false
- },
- {
-  "id": "npc_111",
-  "kind": "trainer",
   "trainerClass": "登山男",
   "name": "登山男",
   "map": "route_07",
-  "x": 9,
-  "y": 16,
-  "dir": "down",
-  "team": [
-   {
-    "dex": 88,
-    "level": 36
-   }
-  ],
-  "money": 432,
-  "sight": 1,
-  "preBattle": "我可不会手下留情！",
-  "postBattle": "我会变得更强的！",
-  "defeated": false
- },
- {
-  "id": "npc_112",
-  "kind": "trainer",
-  "trainerClass": "研究员",
-  "name": "研究员",
-  "map": "route_07",
-  "x": 22,
-  "y": 4,
-  "dir": "down",
-  "team": [
-   {
-    "dex": 77,
-    "level": 38
-   },
-   {
-    "dex": 55,
-    "level": 36
-   },
-   {
-    "dex": 156,
-    "level": 38
-   }
-  ],
-  "money": 1344,
-  "sight": 0,
-  "preBattle": "让你见识见识真正的实力！",
-  "postBattle": "我会变得更强的！",
-  "defeated": false
- },
- {
-  "id": "npc_113",
-  "kind": "trainer",
-  "trainerClass": "少年",
-  "name": "少年",
-  "map": "route_07",
-  "x": 13,
-  "y": 5,
-  "dir": "down",
-  "team": [
-   {
-    "dex": 90,
-    "level": 36
-   },
-   {
-    "dex": 156,
-    "level": 37
-   },
-   {
-    "dex": 29,
-    "level": 37
-   }
-  ],
-  "money": 1320,
-  "sight": 1,
-  "preBattle": "让你见识见识真正的实力！",
-  "postBattle": "看来你和怪兽的羁绊更深。",
-  "defeated": false
- },
- {
-  "id": "npc_114",
-  "kind": "trainer",
-  "trainerClass": "钓鱼手",
-  "name": "钓鱼手",
-  "map": "route_08",
-  "x": 14,
-  "y": 15,
-  "dir": "down",
-  "team": [
-   {
-    "dex": 178,
-    "level": 42
-   },
-   {
-    "dex": 170,
-    "level": 41
-   }
-  ],
-  "money": 996,
-  "sight": 2,
-  "preBattle": "我训练我的伙伴们很久了！",
-  "postBattle": "这就是实力的差距吗……",
-  "defeated": false
- },
- {
-  "id": "npc_115",
-  "kind": "trainer",
-  "trainerClass": "黑衣人",
-  "name": "黑衣人",
-  "map": "route_08",
-  "x": 14,
-  "y": 3,
+  "x": 4,
+  "y": 11,
   "dir": "down",
   "team": [
    {
@@ -2470,18 +2165,227 @@ window.MQ.npcs = [
     "level": 41
    },
    {
-    "dex": 90,
+    "dex": 196,
     "level": 40
-   },
+   }
+  ],
+  "money": 972,
+  "sight": 0,
+  "preBattle": "我可不会手下留情！",
+  "postBattle": "可恶……你比我想象的要强。",
+  "defeated": false
+ },
+ {
+  "id": "npc_107",
+  "kind": "trainer",
+  "trainerClass": "研究员",
+  "name": "研究员",
+  "map": "route_07",
+  "x": 21,
+  "y": 15,
+  "dir": "down",
+  "team": [
    {
-    "dex": 170,
+    "dex": 88,
+    "level": 41
+   }
+  ],
+  "money": 492,
+  "sight": 0,
+  "preBattle": "我训练我的伙伴们很久了！",
+  "postBattle": "可恶……你比我想象的要强。",
+  "defeated": false
+ },
+ {
+  "id": "npc_108",
+  "kind": "trainer",
+  "trainerClass": "少年",
+  "name": "少年",
+  "map": "route_07",
+  "x": 8,
+  "y": 6,
+  "dir": "down",
+  "team": [
+   {
+    "dex": 77,
     "level": 42
    }
   ],
-  "money": 1476,
+  "money": 504,
   "sight": 2,
-  "preBattle": "让你见识见识真正的实力！",
+  "preBattle": "我可不会手下留情！",
   "postBattle": "了不起，收下这点谢礼吧。",
+  "defeated": false
+ },
+ {
+  "id": "npc_109",
+  "kind": "trainer",
+  "trainerClass": "黑衣人",
+  "name": "黑衣人",
+  "map": "route_07",
+  "x": 16,
+  "y": 15,
+  "dir": "down",
+  "team": [
+   {
+    "dex": 73,
+    "level": 41
+   }
+  ],
+  "money": 492,
+  "sight": 1,
+  "preBattle": "哈，又来一个想挑战联盟的小鬼。",
+  "postBattle": "这就是实力的差距吗……",
+  "defeated": false
+ },
+ {
+  "id": "npc_110",
+  "kind": "trainer",
+  "trainerClass": "少年",
+  "name": "少年",
+  "map": "route_07",
+  "x": 16,
+  "y": 14,
+  "dir": "down",
+  "team": [
+   {
+    "dex": 77,
+    "level": 42
+   }
+  ],
+  "money": 504,
+  "sight": 2,
+  "preBattle": "我训练我的伙伴们很久了！",
+  "postBattle": "看来你和怪兽的羁绊更深。",
+  "defeated": false
+ },
+ {
+  "id": "npc_111",
+  "kind": "trainer",
+  "trainerClass": "上班族",
+  "name": "上班族",
+  "map": "route_07",
+  "x": 6,
+  "y": 11,
+  "dir": "down",
+  "team": [
+   {
+    "dex": 74,
+    "level": 42
+   }
+  ],
+  "money": 504,
+  "sight": 0,
+  "preBattle": "想从我身边过去？先打赢我再说！",
+  "postBattle": "看来你和怪兽的羁绊更深。",
+  "defeated": false
+ },
+ {
+  "id": "npc_112",
+  "kind": "trainer",
+  "trainerClass": "少年",
+  "name": "少年",
+  "map": "route_08",
+  "x": 7,
+  "y": 4,
+  "dir": "down",
+  "team": [
+   {
+    "dex": 209,
+    "level": 47
+   }
+  ],
+  "money": 564,
+  "sight": 3,
+  "preBattle": "哈，又来一个想挑战联盟的小鬼。",
+  "postBattle": "了不起，收下这点谢礼吧。",
+  "defeated": false
+ },
+ {
+  "id": "npc_113",
+  "kind": "trainer",
+  "trainerClass": "研究员",
+  "name": "研究员",
+  "map": "route_08",
+  "x": 7,
+  "y": 14,
+  "dir": "down",
+  "team": [
+   {
+    "dex": 164,
+    "level": 46
+   },
+   {
+    "dex": 164,
+    "level": 47
+   },
+   {
+    "dex": 119,
+    "level": 47
+   }
+  ],
+  "money": 1680,
+  "sight": 3,
+  "preBattle": "我可不会手下留情！",
+  "postBattle": "这就是实力的差距吗……",
+  "defeated": false
+ },
+ {
+  "id": "npc_114",
+  "kind": "trainer",
+  "trainerClass": "研究员",
+  "name": "研究员",
+  "map": "route_08",
+  "x": 8,
+  "y": 16,
+  "dir": "down",
+  "team": [
+   {
+    "dex": 156,
+    "level": 45
+   },
+   {
+    "dex": 206,
+    "level": 47
+   },
+   {
+    "dex": 154,
+    "level": 46
+   }
+  ],
+  "money": 1656,
+  "sight": 0,
+  "preBattle": "我可不会手下留情！",
+  "postBattle": "这就是实力的差距吗……",
+  "defeated": false
+ },
+ {
+  "id": "npc_115",
+  "kind": "trainer",
+  "trainerClass": "空手道家",
+  "name": "空手道家",
+  "map": "route_08",
+  "x": 14,
+  "y": 8,
+  "dir": "down",
+  "team": [
+   {
+    "dex": 119,
+    "level": 45
+   },
+   {
+    "dex": 74,
+    "level": 47
+   },
+   {
+    "dex": 32,
+    "level": 46
+   }
+  ],
+  "money": 1656,
+  "sight": 0,
+  "preBattle": "想从我身边过去？先打赢我再说！",
+  "postBattle": "这就是实力的差距吗……",
   "defeated": false
  },
  {
@@ -2490,168 +2394,22 @@ window.MQ.npcs = [
   "trainerClass": "少女",
   "name": "少女",
   "map": "route_08",
-  "x": 13,
-  "y": 7,
+  "x": 4,
+  "y": 12,
   "dir": "down",
   "team": [
    {
-    "dex": 178,
-    "level": 40
-   }
-  ],
-  "money": 480,
-  "sight": 2,
-  "preBattle": "我训练我的伙伴们很久了！",
-  "postBattle": "可恶……你比我想象的要强。",
-  "defeated": false
- },
- {
-  "id": "npc_117",
-  "kind": "trainer",
-  "trainerClass": "研究员",
-  "name": "研究员",
-  "map": "route_08",
-  "x": 17,
-  "y": 3,
-  "dir": "down",
-  "team": [
-   {
-    "dex": 77,
-    "level": 41
+    "dex": 90,
+    "level": 47
    },
    {
-    "dex": 211,
-    "level": 40
-   }
-  ],
-  "money": 972,
-  "sight": 2,
-  "preBattle": "想从我身边过去？先打赢我再说！",
-  "postBattle": "可恶……你比我想象的要强。",
-  "defeated": false
- },
- {
-  "id": "npc_118",
-  "kind": "trainer",
-  "trainerClass": "少女",
-  "name": "少女",
-  "map": "route_victory",
-  "x": 20,
-  "y": 15,
-  "dir": "down",
-  "team": [
-   {
-    "dex": 12,
-    "level": 45
-   },
-   {
-    "dex": 18,
-    "level": 44
-   }
-  ],
-  "money": 1068,
-  "sight": 3,
-  "preBattle": "哈，又来一个想挑战联盟的小鬼。",
-  "postBattle": "了不起，收下这点谢礼吧。",
-  "defeated": false
- },
- {
-  "id": "npc_119",
-  "kind": "trainer",
-  "trainerClass": "上班族",
-  "name": "上班族",
-  "map": "route_victory",
-  "x": 9,
-  "y": 7,
-  "dir": "down",
-  "team": [
-   {
-    "dex": 92,
-    "level": 45
-   },
-   {
-    "dex": 92,
-    "level": 44
-   },
-   {
-    "dex": 12,
-    "level": 45
-   }
-  ],
-  "money": 1608,
-  "sight": 3,
-  "preBattle": "我训练我的伙伴们很久了！",
-  "postBattle": "这就是实力的差距吗……",
-  "defeated": false
- },
- {
-  "id": "npc_120",
-  "kind": "trainer",
-  "trainerClass": "钓鱼手",
-  "name": "钓鱼手",
-  "map": "route_victory",
-  "x": 10,
-  "y": 6,
-  "dir": "down",
-  "team": [
-   {
-    "dex": 18,
-    "level": 46
-   },
-   {
-    "dex": 213,
-    "level": 44
-   }
-  ],
-  "money": 1080,
-  "sight": 3,
-  "preBattle": "想从我身边过去？先打赢我再说！",
-  "postBattle": "可恶……你比我想象的要强。",
-  "defeated": false
- },
- {
-  "id": "npc_121",
-  "kind": "trainer",
-  "trainerClass": "登山男",
-  "name": "登山男",
-  "map": "route_victory",
-  "x": 13,
-  "y": 8,
-  "dir": "down",
-  "team": [
-   {
-    "dex": 106,
-    "level": 45
-   },
-   {
-    "dex": 190,
-    "level": 44
-   }
-  ],
-  "money": 1068,
-  "sight": 1,
-  "preBattle": "想从我身边过去？先打赢我再说！",
-  "postBattle": "我会变得更强的！",
-  "defeated": false
- },
- {
-  "id": "npc_122",
-  "kind": "trainer",
-  "trainerClass": "黑衣人",
-  "name": "黑衣人",
-  "map": "route_victory",
-  "x": 6,
-  "y": 8,
-  "dir": "down",
-  "team": [
-   {
-    "dex": 192,
+    "dex": 29,
     "level": 46
    }
   ],
-  "money": 552,
-  "sight": 3,
-  "preBattle": "我可不会手下留情！",
+  "money": 1116,
+  "sight": 2,
+  "preBattle": "想从我身边过去？先打赢我再说！",
   "postBattle": "这就是实力的差距吗……",
   "defeated": false
  },
@@ -2682,12 +2440,8 @@ window.MQ.npcs = [
   "encounterIndex": 0,
   "team": [
    {
-    "dex": 36,
-    "level": 7
-   },
-   {
-    "dex": 33,
-    "level": 6
+    "dex": 28,
+    "level": 3
    }
   ],
   "money": 0,
@@ -2706,16 +2460,12 @@ window.MQ.npcs = [
   "encounterIndex": 1,
   "team": [
    {
-    "dex": 206,
-    "level": 16
+    "dex": 217,
+    "level": 9
    },
    {
-    "dex": 35,
-    "level": 14
-   },
-   {
-    "dex": 142,
-    "level": 15
+    "dex": 74,
+    "level": 11
    }
   ],
   "money": 0,
@@ -2734,20 +2484,16 @@ window.MQ.npcs = [
   "encounterIndex": 2,
   "team": [
    {
-    "dex": 12,
-    "level": 24
-   },
-   {
-    "dex": 145,
-    "level": 23
-   },
-   {
-    "dex": 39,
-    "level": 22
+    "dex": 71,
+    "level": 18
    },
    {
     "dex": 186,
-    "level": 22
+    "level": 19
+   },
+   {
+    "dex": 92,
+    "level": 19
    }
   ],
   "money": 0,
@@ -2766,23 +2512,19 @@ window.MQ.npcs = [
   "encounterIndex": 3,
   "team": [
    {
-    "dex": 50,
-    "level": 30
+    "dex": 18,
+    "level": 31
    },
    {
-    "dex": 168,
-    "level": 32
+    "dex": 140,
+    "level": 33
    },
    {
-    "dex": 215,
-    "level": 32
+    "dex": 109,
+    "level": 33
    },
    {
-    "dex": 212,
-    "level": 30
-   },
-   {
-    "dex": 15,
+    "dex": 141,
     "level": 32
    }
   ],
@@ -2802,28 +2544,24 @@ window.MQ.npcs = [
   "encounterIndex": 4,
   "team": [
    {
-    "dex": 161,
-    "level": 38
-   },
-   {
-    "dex": 168,
-    "level": 40
-   },
-   {
     "dex": 64,
-    "level": 39
+    "level": 49
    },
    {
-    "dex": 6,
-    "level": 39
+    "dex": 41,
+    "level": 50
    },
    {
-    "dex": 115,
-    "level": 38
+    "dex": 216,
+    "level": 48
    },
    {
-    "dex": 197,
-    "level": 38
+    "dex": 198,
+    "level": 48
+   },
+   {
+    "dex": 32,
+    "level": 48
    }
   ],
   "money": 0,
@@ -2842,28 +2580,28 @@ window.MQ.npcs = [
   "encounterIndex": 5,
   "team": [
    {
-    "dex": 132,
-    "level": 46
+    "dex": 116,
+    "level": 59
    },
    {
-    "dex": 137,
-    "level": 48
+    "dex": 102,
+    "level": 59
    },
    {
-    "dex": 62,
-    "level": 48
+    "dex": 121,
+    "level": 60
    },
    {
-    "dex": 124,
-    "level": 48
+    "dex": 73,
+    "level": 59
    },
    {
-    "dex": 31,
-    "level": 46
+    "dex": 88,
+    "level": 58
    },
    {
     "dex": 133,
-    "level": 48
+    "level": 58
    }
   ],
   "money": 0,
@@ -2872,7 +2610,7 @@ window.MQ.npcs = [
   "defeated": false
  },
  {
-  "id": "npc_123",
+  "id": "npc_117",
   "kind": "trainer",
   "trainerClass": "黯灭组织战斗员",
   "name": "黯灭组织战斗员",
@@ -2882,22 +2620,22 @@ window.MQ.npcs = [
   "dir": "down",
   "team": [
    {
-    "dex": 114,
-    "level": 25
+    "dex": 113,
+    "level": 34
    },
    {
-    "dex": 133,
-    "level": 25
+    "dex": 173,
+    "level": 36
    }
   ],
-  "money": 600,
+  "money": 840,
   "sight": 0,
   "preBattle": "黯灭组织的计划不容外人插手！",
   "postBattle": "区区训练师，竟然……",
   "defeated": false
  },
  {
-  "id": "npc_124",
+  "id": "npc_118",
   "kind": "trainer",
   "trainerClass": "黯灭组织战斗员",
   "name": "黯灭组织战斗员",
@@ -2907,22 +2645,22 @@ window.MQ.npcs = [
   "dir": "down",
   "team": [
    {
-    "dex": 12,
-    "level": 26
+    "dex": 204,
+    "level": 35
    },
    {
     "dex": 172,
-    "level": 26
+    "level": 35
    }
   ],
-  "money": 624,
+  "money": 840,
   "sight": 0,
   "preBattle": "黯灭组织的计划不容外人插手！",
   "postBattle": "区区训练师，竟然……",
   "defeated": false
  },
  {
-  "id": "npc_125",
+  "id": "npc_119",
   "kind": "trainer",
   "trainerClass": "黯灭组织战斗员",
   "name": "黯灭组织战斗员",
@@ -2932,15 +2670,15 @@ window.MQ.npcs = [
   "dir": "down",
   "team": [
    {
-    "dex": 203,
-    "level": 24
+    "dex": 187,
+    "level": 33
    },
    {
-    "dex": 30,
-    "level": 22
+    "dex": 137,
+    "level": 35
    }
   ],
-  "money": 552,
+  "money": 816,
   "sight": 0,
   "preBattle": "黯灭组织的计划不容外人插手！",
   "postBattle": "区区训练师，竟然……",
@@ -2957,28 +2695,28 @@ window.MQ.npcs = [
   "dir": "down",
   "team": [
    {
-    "dex": 129,
-    "level": 31
+    "dex": 173,
+    "level": 36
    },
    {
-    "dex": 172,
-    "level": 33
-   },
-   {
-    "dex": 113,
-    "level": 34
+    "dex": 119,
+    "level": 37
    },
    {
     "dex": 113,
-    "level": 34
+    "level": 39
    },
    {
-    "dex": 172,
-    "level": 34
+    "dex": 130,
+    "level": 39
+   },
+   {
+    "dex": 137,
+    "level": 38
    },
    {
     "dex": 227,
-    "level": 36
+    "level": 40
    }
   ],
   "money": 5000,
@@ -2997,27 +2735,27 @@ window.MQ.npcs = [
   "eliteType": "poison",
   "team": [
    {
-    "dex": 159,
-    "level": 48
-   },
-   {
-    "dex": 90,
-    "level": 49
-   },
-   {
     "dex": 164,
-    "level": 50
+    "level": 53
    },
    {
-    "dex": 175,
-    "level": 49
+    "dex": 12,
+    "level": 53
+   },
+   {
+    "dex": 165,
+    "level": 52
+   },
+   {
+    "dex": 159,
+    "level": 52
    },
    {
     "dex": 90,
-    "level": 50
+    "level": 52
    }
   ],
-  "money": 2880,
+  "money": 3180,
   "preBattle": "我是精灵联盟四天王之一，四天王·毒娘菈薇。毒属性的奥义，你接得住吗？",
   "postBattle": "漂亮……前往下一间吧，真正的考验还在后面。",
   "defeated": false
@@ -3033,27 +2771,27 @@ window.MQ.npcs = [
   "eliteType": "fighting",
   "team": [
    {
-    "dex": 37,
-    "level": 53
-   },
-   {
-    "dex": 41,
-    "level": 51
-   },
-   {
-    "dex": 157,
-    "level": 52
-   },
-   {
     "dex": 192,
-    "level": 50
+    "level": 56
    },
    {
-    "dex": 192,
-    "level": 50
+    "dex": 21,
+    "level": 56
+   },
+   {
+    "dex": 21,
+    "level": 55
+   },
+   {
+    "dex": 69,
+    "level": 55
+   },
+   {
+    "dex": 42,
+    "level": 55
    }
   ],
-  "money": 3000,
+  "money": 3300,
   "preBattle": "我是精灵联盟四天王之一，四天王·铁拳刚。格斗属性的奥义，你接得住吗？",
   "postBattle": "漂亮……前往下一间吧，真正的考验还在后面。",
   "defeated": false
@@ -3069,27 +2807,27 @@ window.MQ.npcs = [
   "eliteType": "psychic",
   "team": [
    {
-    "dex": 190,
-    "level": 53
-   },
-   {
-    "dex": 190,
-    "level": 52
-   },
-   {
-    "dex": 231,
-    "level": 52
-   },
-   {
-    "dex": 190,
-    "level": 52
+    "dex": 120,
+    "level": 56
    },
    {
     "dex": 120,
-    "level": 54
+    "level": 57
+   },
+   {
+    "dex": 120,
+    "level": 56
+   },
+   {
+    "dex": 231,
+    "level": 58
+   },
+   {
+    "dex": 120,
+    "level": 56
    }
   ],
-  "money": 3120,
+  "money": 3420,
   "preBattle": "我是精灵联盟四天王之一，四天王·灵眸澄。超能力属性的奥义，你接得住吗？",
   "postBattle": "漂亮……前往下一间吧，真正的考验还在后面。",
   "defeated": false
@@ -3105,27 +2843,27 @@ window.MQ.npcs = [
   "eliteType": "dragon",
   "team": [
    {
-    "dex": 230,
-    "level": 54
+    "dex": 138,
+    "level": 59
+   },
+   {
+    "dex": 65,
+    "level": 60
+   },
+   {
+    "dex": 138,
+    "level": 59
    },
    {
     "dex": 67,
-    "level": 54
-   },
-   {
-    "dex": 72,
-    "level": 57
-   },
-   {
-    "dex": 72,
-    "level": 55
+    "level": 58
    },
    {
     "dex": 170,
-    "level": 56
+    "level": 58
    }
   ],
-  "money": 3240,
+  "money": 3540,
   "preBattle": "我是精灵联盟四天王之一，四天王·驭龙焰。龙属性的奥义，你接得住吗？",
   "postBattle": "漂亮……前往下一间吧，真正的考验还在后面。",
   "defeated": false
@@ -3140,28 +2878,28 @@ window.MQ.npcs = [
   "dir": "down",
   "team": [
    {
-    "dex": 133,
-    "level": 62
-   },
-   {
-    "dex": 141,
+    "dex": 50,
     "level": 61
    },
    {
-    "dex": 48,
-    "level": 60
+    "dex": 160,
+    "level": 63
    },
    {
-    "dex": 150,
-    "level": 60
+    "dex": 215,
+    "level": 63
    },
    {
-    "dex": 50,
-    "level": 62
+    "dex": 215,
+    "level": 61
+   },
+   {
+    "dex": 14,
+    "level": 63
    },
    {
     "dex": 218,
-    "level": 65
+    "level": 66
    }
   ],
   "money": 12000,

@@ -197,6 +197,56 @@ export function generateWorld(rng, ctx) {
   let npcSeq = 0;
   function nextNpcId() { return `npc_${String(++npcSeq).padStart(3, '0')}`; }
 
+  // -------- single coherent progression curve --------
+  // Player starts with a Lv5 starter. Each route sits at/below the player's expected
+  // level; each gym's ace is only ~1-2 above the route that leads to it; and the whole
+  // game ramps smoothly 3 -> ~64 so a normally-played team is never hard-walled.
+  const LEVELS = {
+    route_01:       { wild: [3, 5],   trainer: [4, 5] },
+    town_riverside: { gymAce: 7,  gymTeam: 2 },
+    route_02:       { wild: [7, 9],   trainer: [8, 9] },
+    forest_verdant: { wild: [8, 11],  trainer: [9, 11] },
+    town_thunder:   { gymAce: 13, gymTeam: 3 },
+    route_03:       { wild: [13, 16], trainer: [14, 16] },
+    town_harbor:    { gymAce: 19, gymTeam: 3 },
+    route_04:       { wild: [19, 22], trainer: [20, 22] },
+    cave_coral:     { wild: [21, 24] },
+    town_stone:     { gymAce: 25, gymTeam: 4 },
+    route_05:       { wild: [25, 28], trainer: [26, 28] },
+    town_mist:      { gymAce: 31, gymTeam: 4 },
+    route_06:       { wild: [31, 34], trainer: [32, 34] },
+    town_ember:     { gymAce: 37, gymTeam: 4 },
+    cave_magma:     { wild: [37, 40] },
+    route_07:       { wild: [39, 42], trainer: [40, 42] },
+    town_frost:     { gymAce: 44, gymTeam: 5 },
+    route_08:       { wild: [44, 47], trainer: [45, 47] },
+    town_sky:       { gymAce: 50, gymTeam: 5 },
+    route_victory:  { wild: [48, 52] },
+  };
+  // expected player level on arrival at each node (drives evolution-stage resolution of wild mons)
+  function tierOf(level) { return level < 12 ? 'early' : level < 30 ? 'mid' : 'late'; }
+
+  // Rarity (base-stat-total tier) must also climb with progression, otherwise an early
+  // gym can field an evolved rare/pseudo (BST ~480) against the player's BST-300 team and
+  // win even at equal level. Cap the allowed category by the encounter's level.
+  const CAT_RANK = { common: 0, uncommon: 1, rare: 2, pseudo: 3, starter: 1, legendary: 4, mythical: 4 };
+  function catCap(level) { return level < 14 ? 0 : level < 26 ? 1 : level < 42 ? 2 : 3; }
+  function okCat(mm, level) { return (CAT_RANK[mm.category] ?? 0) <= catCap(level) && mm.category !== 'legendary' && mm.category !== 'mythical' && mm.category !== 'starter'; }
+
+  // Wild species pool appropriate to an area's level tier (never starters/legendaries).
+  function wildPoolFor(region, tier) {
+    const base = monsters.filter(m => !m.evolvesFrom && m.category !== 'legendary' && m.category !== 'mythical' && m.category !== 'starter');
+    const inRegion = base.filter(m => m.region === region);
+    const src = inRegion.length >= 4 ? inRegion : base;
+    let allow;
+    if (tier === 'early') allow = src.filter(m => m.category === 'common');
+    else if (tier === 'mid') allow = src.filter(m => m.category === 'common' || m.category === 'uncommon');
+    else allow = src; // late: anything non-legendary base
+    if (allow.length < 4) allow = src;
+    if (allow.length < 4) allow = base;
+    return allow;
+  }
+
   function makeTeam(filterFn, count, lvlMin, lvlMax, allowEvo = true) {
     let pool = monsters.filter(filterFn);
     if (!pool.length) pool = monsters.filter(m => m.category !== 'legendary' && m.category !== 'mythical');
@@ -305,12 +355,18 @@ export function generateWorld(rng, ctx) {
       const gb = building(m, OW - 9, OH - 6, 4, 3, gymId, `${n.name} 道馆`);
       interior(gymId, `${n.name}道馆`, n.r, n.id, gb.doorX, gb.doorY, (im) => {
         rect(im.tiles, 0, 0, IW, 1, TILE.WALL);
-        // two gym trainers
-        const gymLevel = 12 + order.indexOf(n.id) * 3;
-        placeTrainer(im, 4, 6, { cls: '道馆训练师', team: makeTeam(mm => mm.types.includes(n.gym) && mm.category !== 'legendary', 2, gymLevel - 3, gymLevel - 1), sight: 3, dir: 'right' });
-        placeTrainer(im, IW - 5, 6, { cls: '道馆训练师', team: makeTeam(mm => mm.types.includes(n.gym) && mm.category !== 'legendary', 2, gymLevel - 3, gymLevel - 1), sight: 3, dir: 'left' });
-        // leader at top center
-        const leaderTeam = makeTeam(mm => mm.types.includes(n.gym) && mm.category !== 'legendary', 4, gymLevel, gymLevel + 2);
+        // gym levels come from the progression curve, not an ad-hoc formula
+        const plan = LEVELS[n.id] || { gymAce: 12, gymTeam: 3 };
+        const ace = plan.gymAce, teamSize = plan.gymTeam;
+        const minionLo = Math.max(2, ace - 4), minionHi = Math.max(3, ace - 2);
+        const gymMon = mm => mm.types.includes(n.gym) && okCat(mm, ace);
+        // two gym trainers (slightly weaker than the leader)
+        placeTrainer(im, 4, 6, { cls: '道馆训练师', team: makeTeam(gymMon, Math.max(1, teamSize - 1), minionLo, minionHi), sight: 3, dir: 'right' });
+        placeTrainer(im, IW - 5, 6, { cls: '道馆训练师', team: makeTeam(gymMon, Math.max(1, teamSize - 1), minionLo, minionHi), sight: 3, dir: 'left' });
+        // leader: the rest of the team trails the ace by a few levels, ace last
+        const leaderTeam = makeTeam(gymMon, teamSize - 1, ace - 3, ace - 1);
+        const acePool = monsters.filter(gymMon);
+        leaderTeam.push({ dex: resolveStage(rng.pick(acePool.length ? acePool : monsters.filter(mm => mm.types.includes(n.gym) && mm.category !== 'legendary' && mm.category !== 'mythical')).dex, ace), level: ace });
         const leader = {
           id: nextNpcId(), kind: 'gymleader', name: GYM_NAMES[n.gym] || '道馆馆主', map: gymId, x: IW >> 1, y: 2, dir: 'down',
           gymType: n.gym, badge: BADGES[n.gym], team: leaderTeam,
@@ -329,48 +385,31 @@ export function generateWorld(rng, ctx) {
     placeFlavorNpc(m, OW - 12, OH - 8, n.r);
   }
 
-  // ----- route trainers + encounter tables -----
+  // ----- encounter tables + route trainers (driven by the progression curve) -----
   for (const n of nodes) {
     const m = mapById[n.id];
-    if (n.kind === 'route' || n.kind === 'cave') {
-      const idx = order.indexOf(n.id);
-      const baseLvl = 4 + idx * 2;
-      // encounter table from region monsters (base/early stages)
-      const pool = monstersInRegion(regions[n.r]).filter(x => !x.evolvesFrom);
-      const fallback = wildPool;
-      const src = (pool.length ? pool : fallback);
-      const table = [];
-      for (let i = 0; i < 6 && i < src.length; i++) {
-        const mm = rng.pick(src);
-        table.push({ dex: mm.dex, min: baseLvl, max: baseLvl + 3, weight: rng.int(5, 30) });
-      }
-      encounters[m.encounter] = { kind: n.kind === 'cave' ? 'cave' : 'grass', table };
+    if (n.kind !== 'route' && n.kind !== 'cave') continue;
+    const band = (LEVELS[n.id] && LEVELS[n.id].wild) || [4, 7];
+    const [wmin, wmax] = band;
+    const tier = tierOf(Math.floor((wmin + wmax) / 2));
+    const src = wildPoolFor(regions[n.r], tier);
+    const picks = rng.shuffle(src).slice(0, Math.min(6, src.length));
+    const table = picks.map(mm => ({ dex: mm.dex, min: wmin, max: wmax, weight: rng.int(5, 30) }));
+    if (!table.length) { const mm = rng.pick(src); table.push({ dex: mm.dex, min: wmin, max: wmax, weight: 10 }); }
+    encounters[m.encounter] = { kind: n.kind === 'cave' ? 'cave' : 'grass', table };
 
-      // place 3-5 trainers along the route
-      const count = rng.int(3, 5);
+    // caves have no trainers; routes get 2-4, teams growing with depth
+    if (n.kind === 'route') {
+      const tb = (LEVELS[n.id] && LEVELS[n.id].trainer) || [wmin, wmax];
+      const maxTeam = Math.min(3, 1 + Math.floor(tb[0] / 16));
+      const count = rng.int(4, 6); // enough EXP on the critical path to keep pace with the curve
       for (let i = 0; i < count; i++) {
-        let x = rng.int(3, OW - 4), y = rng.int(3, OH - 4);
-        const team = makeTeam(mm => mm.region === regions[n.r] && mm.category !== 'legendary', rng.int(1, 3), baseLvl, baseLvl + 2);
+        const x = rng.int(3, OW - 4), y = rng.int(3, OH - 4);
+        const team = makeTeam(mm => mm.region === regions[n.r] && okCat(mm, tb[1]), rng.int(1, maxTeam), tb[0], tb[1]);
         if (!team.length) continue;
         placeTrainer(m, x, y, { team, sight: rng.int(0, 3) });
       }
     }
-  }
-
-  // build cave encounter table entries (caves already set m.encounter)
-  for (const n of nodes) {
-    if (n.kind !== 'cave') continue;
-    const m = mapById[n.id];
-    const idx = order.indexOf(n.id);
-    const baseLvl = 6 + idx * 2;
-    const pool = monstersInRegion(regions[n.r]).filter(x => !x.evolvesFrom);
-    const src = pool.length ? pool : wildPool;
-    const table = [];
-    for (let i = 0; i < 6 && i < src.length; i++) {
-      const mm = rng.pick(src);
-      table.push({ dex: mm.dex, min: baseLvl, max: baseLvl + 4, weight: rng.int(5, 30) });
-    }
-    encounters[m.encounter] = { kind: 'cave', table };
   }
 
   // ---------- story-critical NPCs ----------
@@ -394,14 +433,17 @@ export function generateWorld(rng, ctx) {
     });
   }
 
-  // Rival — appears in starting town, recurs along the chain.
+  // Rival — appears in starting town, recurs along the chain. Levels track the curve
+  // and only ever sit ~1 above the player's expected level at each meeting.
   const rivalSpots = ['town_newleaf', 'route_02', 'town_harbor', 'town_mist', 'town_sky', 'league_plateau'];
+  const rivalPlan = [{ ace: 5, size: 1 }, { ace: 11, size: 2 }, { ace: 20, size: 3 }, { ace: 33, size: 4 }, { ace: 50, size: 5 }, { ace: 60, size: 6 }];
   rivalSpots.forEach((mapId, i) => {
     const m = mapById[mapId];
     if (!m) return;
-    const lvl = 6 + i * 8;
+    const lvl = rivalPlan[i].ace;
     const id = `npc_rival_${i}`;
-    const team = makeTeam(mm => mm.category !== 'legendary' && mm.category !== 'mythical', Math.min(2 + i, 6), lvl, lvl + 2);
+    // rival is a notch tougher than route trainers: allow one rarity tier above the level cap
+    const team = makeTeam(mm => (CAT_RANK[mm.category] ?? 0) <= catCap(lvl) + 1 && mm.category !== 'legendary' && mm.category !== 'mythical' && mm.category !== 'starter', rivalPlan[i].size, lvl - 2, lvl);
     const n = {
       id, kind: 'rival', name: '青木', map: mapId, x: 6 + i, y: 6, dir: 'down', encounterIndex: i,
       team, money: 0,
@@ -419,18 +461,19 @@ export function generateWorld(rng, ctx) {
     const hb = building(town, 10, 3, 4, 3, hideoutId, '可疑的建筑');
     interior(hideoutId, '黯灭组织据点', 4, 'town_ember', hb.doorX, hb.doorY, (im) => {
       rect(im.tiles, 0, 0, IW, 2, TILE.WALL);
+      // hideout sits by the 6th gym (ace ~37); grunts ~Lv33-36, boss ~Lv36-39 + ace legend
       for (let i = 0; i < 3; i++) {
-        placeTrainer(im, 3 + i * 4, 6, { cls: '黯灭组织战斗员', team: makeTeam(mm => mm.types.some(t => ['dark', 'poison', 'ghost'].includes(t)) && mm.category !== 'legendary', 2, 22, 26), sight: 0, dir: 'down', pre: '黯灭组织的计划不容外人插手！', post: '区区训练师，竟然……' });
+        placeTrainer(im, 3 + i * 4, 6, { cls: '黯灭组织战斗员', team: makeTeam(mm => mm.types.some(t => ['dark', 'poison', 'ghost'].includes(t)) && mm.category !== 'legendary', 2, 33, 36), sight: 0, dir: 'down', pre: '黯灭组织的计划不容外人插手！', post: '区区训练师，竟然……' });
       }
       const boss = {
         id: 'npc_villain_boss', kind: 'story', role: 'villain', name: '黯灭首领·赫拉斯', map: hideoutId, x: IW >> 1, y: 3, dir: 'down',
-        team: makeTeam(mm => mm.types.includes('dark') && mm.category !== 'legendary', 5, 30, 34),
+        team: makeTeam(mm => mm.types.includes('dark') && mm.category !== 'legendary', 5, 36, 39),
         money: 5000,
         preBattle: '你就是那个碍事的训练师？我要用虚空之兽的力量重塑这个世界！',
         postBattle: '不可能……我的宏图怎能止步于此！',
         defeated: false,
       };
-      boss.team.push({ dex: legendaryDex[9], level: 36 }); // void legendary as ace
+      boss.team.push({ dex: legendaryDex[9], level: 40 }); // void legendary as ace
       npcs.push(boss); im.npcs.push(boss.id);
     });
   }
@@ -448,10 +491,10 @@ export function generateWorld(rng, ctx) {
       const b = building(plateau, eliteX[i], 12, 3, 3, roomId, `四天王之间 ${i + 1}`);
       interior(roomId, `四天王·${TYPE_ZH[ty]}之间`, 2, 'league_plateau', b.doorX, b.doorY, (im) => {
         rect(im.tiles, 0, 0, IW, 2, TILE.WALL);
-        const lvl = 48 + i * 2;
+        const lvl = 53 + i * 2; // 53,55,57,59 — a steady climb through the Elite Four
         const e = {
           id: `npc_elite_${i}`, kind: 'elite', name: ELITE_NAMES[i], map: roomId, x: IW >> 1, y: 3, dir: 'down', eliteType: ty,
-          team: makeTeam(mm => mm.types.includes(ty) && mm.category !== 'legendary', 5, lvl, lvl + 3),
+          team: makeTeam(mm => mm.types.includes(ty) && mm.category !== 'legendary', 5, lvl - 1, lvl + 1),
           money: lvl * 60,
           preBattle: `我是精灵联盟四天王之一，${ELITE_NAMES[i]}。${TYPE_ZH[ty]}属性的奥义，你接得住吗？`,
           postBattle: '漂亮……前往下一间吧，真正的考验还在后面。',
@@ -465,8 +508,8 @@ export function generateWorld(rng, ctx) {
     const cb = building(plateau, (OW >> 1) - 2, 4, 4, 3, champId, '冠军之间');
     interior(champId, '冠军之间', 2, 'league_plateau', cb.doorX, cb.doorY, (im) => {
       rect(im.tiles, 0, 0, IW, 2, TILE.WALL);
-      const champTeam = makeTeam(mm => mm.category === 'rare' || mm.category === 'pseudo', 5, 58, 62);
-      champTeam.push({ dex: legendaryDex[0], level: 65 }); // sky dragon ace
+      const champTeam = makeTeam(mm => mm.category === 'rare' || mm.category === 'pseudo', 5, 61, 63);
+      champTeam.push({ dex: legendaryDex[0], level: 66 }); // sky dragon ace
       const champ = {
         id: 'npc_champion', kind: 'champion', name: '冠军·天野澪', map: champId, x: IW >> 1, y: 3, dir: 'down',
         team: champTeam, money: 12000,

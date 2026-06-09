@@ -2,7 +2,7 @@
 
 一个**纯前端、零依赖**的浏览器宝可梦风格 RPG。打开 `index.html` 即可游玩——无需构建、无需联网。
 
-![规模](https://img.shields.io/badge/怪兽-232-green) ![NPC](https://img.shields.io/badge/NPC-138-blue) ![地图](https://img.shields.io/badge/地图-64-orange)
+![规模](https://img.shields.io/badge/怪兽-232-green) ![NPC](https://img.shields.io/badge/NPC-132-blue) ![地图](https://img.shields.io/badge/地图-64-orange)
 
 ## 内容规模
 
@@ -48,8 +48,21 @@ npm run serve   # http://localhost:8123
 ```bash
 npm run gen      # 重新生成全部内容数据（确定性，seed 固定）-> js/data/*.js
 npm run verify   # 无头验证：模拟浏览器加载全部脚本并真实驱动玩法，39 项断言
+npm run balance  # 数值模拟：用真实伤害公式跑全主线练级与各道馆胜率
 npm run serve    # 启动本地静态服务器
 ```
+
+### 数值与平衡
+
+等级与种族值是一条**连贯的成长曲线**（`tools/lib/gen-world.js` 的 `LEVELS` 表），不再用脱节的公式：
+
+- **道路野怪 ≤ 玩家等级**：1 号道路 Lv3-5，玩家起始 Lv5 即领先；之后每条道路 ~+3 级，平滑爬升至联盟。
+- **道馆 Lv7→13→19→25→31→37→44→50**，馆主只比所在道路高 1-2 级；四天王 52-59，冠军 61-66。
+- **种族值档位随进度解锁**（`okCat`）：早期道馆只出常见种，避免一开局就遇到进化后的稀有种（种族值 480+）碾压。
+- **自我追赶的经验机制**（`Species.expYield`）：击败高于自己等级的对手获得额外经验、练过头则锐减，让任意规模的队伍都自动贴近内容等级；配合**现代全员共享经验**（`awardExp`），多属性队伍不会因分摊而掉队。
+- 野怪按等级**解析进化形态**（`Species.dexForLevel`），高级区域出现已进化的同族。
+
+`npm run balance` 会输出"落后 N 级胜率"与逐道馆胜率，作为数值回归基线。
 
 ## 架构
 

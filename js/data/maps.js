@@ -1237,8 +1237,7 @@ window.MQ.maps = [
    "npc_070",
    "npc_071",
    "npc_072",
-   "npc_073",
-   "npc_074"
+   "npc_073"
   ],
   "encounter": "enc_route_01",
   "heal": false,
@@ -2483,6 +2482,7 @@ window.MQ.maps = [
   ],
   "objects": [],
   "npcs": [
+   "npc_074",
    "npc_075",
    "npc_076",
    "npc_077",
@@ -3084,7 +3084,8 @@ window.MQ.maps = [
    "npc_080",
    "npc_081",
    "npc_082",
-   "npc_083"
+   "npc_083",
+   "npc_084"
   ],
   "encounter": "enc_forest_verdant",
   "heal": false,
@@ -4329,11 +4330,11 @@ window.MQ.maps = [
   ],
   "objects": [],
   "npcs": [
-   "npc_084",
    "npc_085",
    "npc_086",
    "npc_087",
-   "npc_088"
+   "npc_088",
+   "npc_089"
   ],
   "encounter": "enc_route_03",
   "heal": false,
@@ -5579,7 +5580,6 @@ window.MQ.maps = [
   ],
   "objects": [],
   "npcs": [
-   "npc_089",
    "npc_090",
    "npc_091",
    "npc_092",
@@ -6175,11 +6175,7 @@ window.MQ.maps = [
    }
   ],
   "objects": [],
-  "npcs": [
-   "npc_094",
-   "npc_095",
-   "npc_096"
-  ],
+  "npcs": [],
   "encounter": "enc_cave_coral",
   "heal": false,
   "gym": null
@@ -7423,10 +7419,12 @@ window.MQ.maps = [
   ],
   "objects": [],
   "npcs": [
+   "npc_094",
+   "npc_095",
+   "npc_096",
    "npc_097",
    "npc_098",
-   "npc_099",
-   "npc_100"
+   "npc_099"
   ],
   "encounter": "enc_route_05",
   "heal": false,
@@ -8672,9 +8670,12 @@ window.MQ.maps = [
   ],
   "objects": [],
   "npcs": [
+   "npc_100",
    "npc_101",
    "npc_102",
-   "npc_103"
+   "npc_103",
+   "npc_104",
+   "npc_105"
   ],
   "encounter": "enc_route_06",
   "heal": false,
@@ -9931,13 +9932,7 @@ window.MQ.maps = [
    }
   ],
   "objects": [],
-  "npcs": [
-   "npc_104",
-   "npc_105",
-   "npc_106",
-   "npc_107",
-   "npc_108"
-  ],
+  "npcs": [],
   "encounter": "enc_cave_magma",
   "heal": false,
   "gym": null
@@ -10529,11 +10524,12 @@ window.MQ.maps = [
   ],
   "objects": [],
   "npcs": [
+   "npc_106",
+   "npc_107",
+   "npc_108",
    "npc_109",
    "npc_110",
-   "npc_111",
-   "npc_112",
-   "npc_113"
+   "npc_111"
   ],
   "encounter": "enc_route_07",
   "heal": false,
@@ -11778,10 +11774,11 @@ window.MQ.maps = [
   ],
   "objects": [],
   "npcs": [
+   "npc_112",
+   "npc_113",
    "npc_114",
    "npc_115",
-   "npc_116",
-   "npc_117"
+   "npc_116"
   ],
   "encounter": "enc_route_08",
   "heal": false,
@@ -13026,13 +13023,7 @@ window.MQ.maps = [
    }
   ],
   "objects": [],
-  "npcs": [
-   "npc_118",
-   "npc_119",
-   "npc_120",
-   "npc_121",
-   "npc_122"
-  ],
+  "npcs": [],
   "encounter": "enc_route_victory",
   "heal": false,
   "gym": null
@@ -22685,9 +22676,9 @@ window.MQ.maps = [
   ],
   "objects": [],
   "npcs": [
-   "npc_123",
-   "npc_124",
-   "npc_125",
+   "npc_117",
+   "npc_118",
+   "npc_119",
    "npc_villain_boss"
   ],
   "encounter": null,
