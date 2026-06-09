@@ -1,0 +1,13 @@
+{
+  "name": "monsterquest",
+  "version": "1.0.0",
+  "description": "MonsterQuest — a complex browser-based monster-taming RPG with 200+ creatures, 100+ NPCs, evolution chains, and a long branching storyline.",
+  "type": "module",
+  "scripts": {
+    "gen": "node tools/generate.js",
+    "verify": "node tools/verify.js",
+    "serve": "node tools/serve.js"
+  },
+  "author": "",
+  "license": "MIT"
+}

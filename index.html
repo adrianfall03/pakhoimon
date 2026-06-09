@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>怪兽探险 · MonsterQuest</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="frame">
+    <canvas id="game"></canvas>
+    <div id="hud">
+      <span class="kbd">方向键 / WASD</span> 移动 ·
+      <span class="kbd">Z</span> 确认/对话 ·
+      <span class="kbd">X</span> 返回 ·
+      <span class="kbd">M</span> 菜单
+    </div>
+  </div>
+  <p id="tip">提示：在高高的草丛中行走会遇到野生怪兽。先到研究所找橡树博士对话，开启你的图鉴吧！</p>
+
+  <!-- ===== generated data ===== -->
+  <script src="js/data/types.js"></script>
+  <script src="js/data/typechart.js"></script>
+  <script src="js/data/moves.js"></script>
+  <script src="js/data/items.js"></script>
+  <script src="js/data/monsters.js"></script>
+  <script src="js/data/special.js"></script>
+  <script src="js/data/maps.js"></script>
+  <script src="js/data/npcs.js"></script>
+  <script src="js/data/encounters.js"></script>
+  <script src="js/data/tiles.js"></script>
+  <script src="js/data/tileenum.js"></script>
+
+  <!-- ===== story data + logic ===== -->
+  <script src="js/data/story.js"></script>
+
+  <!-- ===== core ===== -->
+  <script src="js/core/util.js"></script>
+  <script src="js/core/species.js"></script>
+  <script src="js/core/game.js"></script>
+
+  <!-- ===== engine ===== -->
+  <script src="js/engine/input.js"></script>
+  <script src="js/engine/render.js"></script>
+  <script src="js/engine/ui_primitives.js"></script>
+  <script src="js/engine/world.js"></script>
+
+  <!-- ===== systems ===== -->
+  <script src="js/systems/battle.js"></script>
+  <script src="js/systems/npcs.js"></script>
+  <script src="js/systems/save.js"></script>
+
+  <!-- ===== ui ===== -->
+  <script src="js/ui/ui.js"></script>
+  <script src="js/ui/title.js"></script>
+
+  <!-- ===== boot ===== -->
+  <script src="js/main.js"></script>
+</body>
+</html>
