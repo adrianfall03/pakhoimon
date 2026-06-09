@@ -77,12 +77,10 @@
     const sp = util.monByDex(inst.dex);
     const b = sp.baseStats, L = inst.level;
     const out = {};
-    // Base HP, plus a level-decaying bulk bonus. Early-game HP is otherwise so low that
-    // battles last only 1-2 turns, which makes the faster (higher-level) side win outright
-    // and turns a 2-level gap into a blowout. The bonus fattens low levels (longer fights,
-    // so type/crit/variance can matter) and fades to near-zero by the late game.
-    out.maxHp = Math.floor((2 * b.hp + inst.ivs.hp + Math.floor(inst.evs.hp / 4)) * L / 100) + L + 10
-      + Math.floor(b.hp * 22 / (L + 12));
+    // Standard HP, scaled up a uniform 15%. The extra bulk lengthens fights by ~1 turn so
+    // the faster side's first-strike edge is less decisive and a small level gap is no
+    // longer an automatic blow-out — without bloating low-level HP into tediously long battles.
+    out.maxHp = Math.round((Math.floor((2 * b.hp + inst.ivs.hp + Math.floor(inst.evs.hp / 4)) * L / 100) + L + 10) * 1.15);
     const nat = NATURES[inst.nature];
     for (const s of ['atk', 'def', 'spa', 'spd', 'spe']) {
       let v = Math.floor((2 * b[s] + inst.ivs[s] + Math.floor(inst.evs[s] / 4)) * L / 100) + 5;
