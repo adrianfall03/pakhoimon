@@ -6,6 +6,8 @@
   const World = MQ.World = {};
   const TS = MQ.Render.TS;
   const STEP_TIME = 0.14; // seconds per tile
+  // protagonist look: red cap, dark hair, light shirt, blue jeans (classic look)
+  const PLAYER_PAL = { cap: '#e23b3b', hair: '#4a3220', skin: '#f1c89a', shirt: '#eceef2', pants: '#3a6ea5', shoe: '#caa14a' };
 
   let map = null;
   const cam = { x: 0, y: 0 };
@@ -215,23 +217,26 @@
     for (const id of map.npcs) {
       const n = util.npc(id);
       if (!n || n._gone) continue;
-      const sx = (n.x - cam.x) * TS, sy = (n.y - cam.y) * TS;
+      const sx = Math.round((n.x - cam.x) * TS), sy = Math.round((n.y - cam.y) * TS);
       if (sx < -TS || sy < -TS || sx > MQ.Render.canvas().width || sy > MQ.Render.canvas().height) continue;
-      MQ.Render.drawHuman(sx, sy, n.dir || 'down', MQ.Render.npcPalette(n.kind));
+      MQ.Render.drawHuman(sx, sy, n.dir || 'down', MQ.Render.npcPalette(n.kind), 0);
       if (n.kind === 'gymleader' || n.kind === 'story' || n.kind === 'champion' || n.kind === 'elite') {
         ctx.fillStyle = '#ffd54a'; ctx.font = '10px sans-serif'; ctx.textAlign = 'center';
         ctx.fillText('!', sx + TS / 2, sy - 10); ctx.textAlign = 'left';
       }
     }
-    // draw player (with movement tween)
+    // draw player (with movement tween + walk frame)
     let px = (p.x - cam.x) * TS, py = (p.y - cam.y) * TS;
+    let frame = 0;
     if (moving) {
       const ix = mvFrom.x + (mvTo.x - mvFrom.x) * mvT;
       const iy = mvFrom.y + (mvTo.y - mvFrom.y) * mvT;
       px = (ix - cam.x) * TS; py = (iy - cam.y) * TS;
       if (mvTo.hop) py -= Math.sin(mvT * Math.PI) * 14;
+      frame = (Math.floor(p.x + p.y) % 2 === 0) ? (mvT < 0.5 ? 1 : 2) : (mvT < 0.5 ? 2 : 1);
     }
-    MQ.Render.drawHuman(px, py, p.dir, { body: '#e44', skin: '#f0c89a', hair: '#3a2a1a' });
+    px = Math.round(px); py = Math.round(py);
+    MQ.Render.drawHuman(px, py, p.dir, PLAYER_PAL, frame);
     // map name banner handled by toast
   };
 

@@ -68,14 +68,20 @@
       const spr = MQ.Render.monsterSprite(STARTERS[i % 3] + i, 70);
       ctx.globalAlpha = 0.18; ctx.drawImage(spr, x, y); ctx.globalAlpha = 1;
     }
-    // title
+    // title — full logo only on the main menu; a compact header elsewhere so it doesn't
+    // collide with the name/starter prompts.
     ctx.textAlign = 'center';
-    ctx.fillStyle = '#ffd54a'; ctx.font = 'bold 56px "PingFang SC", sans-serif';
-    ctx.fillText('怪兽探险', W / 2, H * 0.16);
-    ctx.fillStyle = '#fff'; ctx.font = '20px sans-serif';
-    ctx.fillText('MonsterQuest · 澪原物语', W / 2, H * 0.16 + 64);
-    ctx.fillStyle = '#bcd'; ctx.font = '13px sans-serif';
-    ctx.fillText(`收录 ${(MQ.monsters || []).length} 种怪兽 · ${(MQ.npcs || []).length} 位角色 · 长篇主线`, W / 2, H * 0.16 + 92);
+    if (state === 'menu') {
+      ctx.fillStyle = '#ffd54a'; ctx.font = 'bold 56px "PingFang SC", sans-serif';
+      ctx.fillText('怪兽探险', W / 2, H * 0.16);
+      ctx.fillStyle = '#fff'; ctx.font = '20px sans-serif';
+      ctx.fillText('MonsterQuest · 澪原物语', W / 2, H * 0.16 + 64);
+      ctx.fillStyle = '#bcd'; ctx.font = '13px sans-serif';
+      ctx.fillText(`收录 ${(MQ.monsters || []).length} 种怪兽 · ${(MQ.npcs || []).length} 位角色 · 长篇主线`, W / 2, H * 0.16 + 92);
+    } else {
+      ctx.fillStyle = '#ffd54a'; ctx.font = 'bold 32px "PingFang SC", sans-serif';
+      ctx.fillText('怪兽探险', W / 2, H * 0.08);
+    }
 
     if (state === 'menu') {
       const opts = menuOpts();
