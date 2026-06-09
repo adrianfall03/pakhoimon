@@ -6,6 +6,7 @@
   "scripts": {
     "gen": "node tools/generate.js",
     "verify": "node tools/verify.js",
+    "balance": "node tools/balance.js",
     "serve": "node tools/serve.js"
   },
   "author": "",

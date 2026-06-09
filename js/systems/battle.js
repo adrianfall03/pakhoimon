@@ -435,13 +435,17 @@
   }
 
   function awardExp(fallen) {
-    const base = Species.expYield(fallen, me().level, { trainer: B.type === 'trainer' });
-    const alive = MQ.Game.state.party.filter(m => m.curHp > 0 && B.participants.has(m.uid));
-    const recv = alive.length ? alive : [me()];
-    const each = Math.max(1, Math.floor(base / recv.length));
-    for (const mon of recv) {
-      say(`${nick(mon)} 获得了 ${each} 点经验值！`);
-      const events = Species.gainExp(mon, each);
+    // Modern shared EXP: every alive party member gains the FULL, individually level-scaled
+    // yield (participants at 100%, benched at 60%). This keeps a multi-mon team in pace with
+    // the world's level curve instead of the EXP being split thin across six mons.
+    const recv = MQ.Game.state.party.filter(m => m.curHp > 0);
+    const list = recv.length ? recv : [me()];
+    for (const mon of list) {
+      const participated = B.participants.has(mon.uid) || mon.uid === me().uid;
+      let gain = Species.expYield(fallen, mon.level, { trainer: B.type === 'trainer' });
+      if (!participated) gain = Math.max(1, Math.floor(gain * 0.6));
+      say(`${nick(mon)} 获得了 ${gain} 点经验值！`);
+      const events = Species.gainExp(mon, gain);
       for (const ev of events) {
         if (ev.type !== 'levelup') continue;
         say(`${nick(mon)} 升到了 ${ev.to} 级！`);
