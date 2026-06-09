@@ -73,6 +73,9 @@ export function generateWorld(rng, ctx) {
     rect(m.tiles, x, y, w, 1, TILE.ROOF);
     const doorX = x + (w >> 1), doorY = y + h - 1;
     m.tiles[doorY][doorX] = TILE.DOOR;
+    // a short path approach below the door so buildings sit on a path stub over grass
+    if (m.tiles[doorY + 1]) m.tiles[doorY + 1][doorX] = TILE.PATH;
+    if (m.tiles[doorY + 2] && m.tiles[doorY + 2][doorX] === TILE.GRASS) m.tiles[doorY + 2][doorX] = TILE.PATH;
     m.warps.push({ x: doorX, y: doorY, to: toMapId, toX: IW >> 1, toY: IH - 2, label });
     if (label) m.objects.push({ x, y: y - 1, sign: label });
     return { doorX, doorY };
@@ -132,7 +135,7 @@ export function generateWorld(rng, ctx) {
 
   // ---------- build each outdoor map ----------
   for (const n of nodes) {
-    const fill = n.kind === 'cave' ? TILE.CAVEFLOOR : (n.kind === 'town' ? TILE.PATH : TILE.GRASS);
+    const fill = n.kind === 'cave' ? TILE.CAVEFLOOR : TILE.GRASS; // towns are grassy with paths, not all sand
     const m = newMap(n.id, n.name, n.kind, n.r, OW, OH, fill);
     m.gym = n.gym || null;
     if (n.kind === 'cave') {
@@ -161,11 +164,15 @@ export function generateWorld(rng, ctx) {
         m.tiles[midY][OW >> 1] = TILE.PATH; // keep path crossing open
         m.encounter = `enc_${n.id}`;
       } else {
-        // town: open paths, a flower bed, a sign
-        rect(m.tiles, 2, 2, OW - 4, OH - 4, TILE.PATH);
-        rect(m.tiles, OW - 8, OH - 6, 3, 2, TILE.FLOWER);
-        m.tiles[OH - 3][3] = TILE.SIGN;
-        m.objects.push({ x: 3, y: OH - 3, sign: `${n.name} —— 愿你的旅途充满奇迹。` });
+        // town: grass base with a central path crossroads + plaza, flower beds and a sign
+        const cyRow = OH >> 1, cxCol = OW >> 1;
+        hPath(m.tiles, cyRow, 1, OW - 2);
+        vPath(m.tiles, cxCol, 1, OH - 2);
+        rect(m.tiles, cxCol - 1, cyRow - 1, 3, 3, TILE.PATH); // plaza
+        rect(m.tiles, cxCol - 5, cyRow + 2, 2, 2, TILE.FLOWER);
+        rect(m.tiles, cxCol + 4, cyRow - 3, 2, 2, TILE.FLOWER);
+        m.tiles[cyRow + 2][cxCol + 3] = TILE.SIGN;
+        m.objects.push({ x: cxCol + 3, y: cyRow + 2, sign: `${n.name} —— 愿你的旅途充满奇迹。` });
       }
     }
   }

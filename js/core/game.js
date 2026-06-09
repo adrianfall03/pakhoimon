@@ -105,7 +105,8 @@
         if (Game.mode === 'menu') MQ.UI.renderMenu(ctx);
         break;
     }
-    MQ.Toast && MQ.Toast.render(ctx);
+    // the map-name banner only belongs on the field, not over battle/title
+    if (MQ.Toast && Game.mode !== 'battle' && Game.mode !== 'title') MQ.Toast.render(ctx);
     MQ.Transition && MQ.Transition.render(ctx);
   };
 
