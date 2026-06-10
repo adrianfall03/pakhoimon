@@ -44,6 +44,8 @@
     rock: '#3a3442', rockD: '#272231', rockHi: '#5a5366',
     cfloor: '#615a6b', cfloorD: '#4b4555',
     floor: '#caa066', floorD: '#a8814a',
+    snow: '#e7edf3', snowD: '#cdd9e2', snowL: '#ffffff',
+    boulderGnd: '#9a907e', boulder: '#7c7468', boulderD: '#5d564d', boulderHi: '#b3a994',
     outline: '#23202b',
   };
 
@@ -148,6 +150,23 @@
   function bPC(g) { bFloor(g); g.fillStyle = C.outline; g.fillRect(6, 4, 20, 22); g.fillStyle = '#2a2a3a'; g.fillRect(7, 5, 18, 20); g.fillStyle = '#4ad06a'; g.fillRect(10, 8, 12, 9); g.fillStyle = '#8fffa8'; g.fillRect(11, 9, 4, 3); g.fillStyle = '#555'; g.fillRect(10, 19, 12, 3); }
   function bHeal(g) { bFloor(g); g.fillStyle = C.outline; g.fillRect(6, 4, 20, 22); g.fillStyle = '#e8e8ee'; g.fillRect(7, 5, 18, 20); g.fillStyle = '#e8503a'; g.fillRect(14, 8, 4, 12); g.fillRect(10, 12, 12, 4); g.fillStyle = '#bcd'; g.fillRect(8, 22, 16, 2); }
 
+  function bSnow(g, seed) {
+    g.fillStyle = C.snow; g.fillRect(0, 0, TS, TS);
+    const r = rng(seed);
+    for (let i = 0; i < 5; i++) { g.fillStyle = C.snowD; g.fillRect((r() * 30) | 0, (r() * 30) | 0, 3, 2); }
+    for (let i = 0; i < 4; i++) { g.fillStyle = C.snowL; g.fillRect((r() * 30) | 0, (r() * 30) | 0, 2, 2); }
+  }
+  function bRock(g, seed) {
+    // a boulder obstacle with its own neutral rocky ground (biome-agnostic)
+    g.fillStyle = C.boulderGnd; g.fillRect(0, 0, TS, TS);
+    const r = rng(seed);
+    for (let i = 0; i < 4; i++) { g.fillStyle = shade(C.boulderGnd, -14); g.fillRect((r() * 28) | 0, (r() * 28) | 0, 3, 2); }
+    g.fillStyle = C.boulderD; circle(g, 16, 17, 12);
+    g.fillStyle = C.boulder; circle(g, 16, 16, 10);
+    g.fillStyle = C.boulderHi; circle(g, 12, 12, 4);
+    g.fillStyle = C.boulderD; g.fillRect(14, 18, 6, 2); g.fillRect(9, 14, 3, 2);
+  }
+
   function circle(g, cx, cy, r) { for (let y = -r; y <= r; y++) { const w = Math.floor(Math.sqrt(r * r - y * y)); g.fillRect(cx - w, cy + y, w * 2, 1); } }
 
   // ---------- tile cache ----------
@@ -179,6 +198,8 @@
       case TILE.LEDGE: bLedge(g, seed); break;
       case TILE.PC: bPC(g); break;
       case TILE.HEAL: bHeal(g); break;
+      case TILE.SNOW: bSnow(g, seed); break;
+      case TILE.ROCK: bRock(g, seed); break;
       default: g.fillStyle = '#000'; g.fillRect(0, 0, TS, TS);
     }
     tileCache.set(key, c); return c;

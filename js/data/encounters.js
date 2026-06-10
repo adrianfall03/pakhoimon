@@ -5,40 +5,40 @@ window.MQ.encounters = {
   "kind": "grass",
   "table": [
    {
-    "dex": 202,
-    "min": 3,
-    "max": 5,
-    "weight": 17
-   },
-   {
-    "dex": 138,
-    "min": 3,
-    "max": 5,
-    "weight": 17
-   },
-   {
     "dex": 83,
     "min": 3,
     "max": 5,
-    "weight": 28
+    "weight": 10
+   },
+   {
+    "dex": 202,
+    "min": 3,
+    "max": 5,
+    "weight": 22
    },
    {
     "dex": 81,
     "min": 3,
     "max": 5,
-    "weight": 24
+    "weight": 23
    },
    {
-    "dex": 21,
+    "dex": 138,
     "min": 3,
     "max": 5,
-    "weight": 18
+    "weight": 22
    },
    {
     "dex": 145,
     "min": 3,
     "max": 5,
-    "weight": 7
+    "weight": 19
+   },
+   {
+    "dex": 21,
+    "min": 3,
+    "max": 5,
+    "weight": 15
    }
   ]
  },
@@ -46,40 +46,40 @@ window.MQ.encounters = {
   "kind": "grass",
   "table": [
    {
-    "dex": 202,
-    "min": 7,
-    "max": 9,
-    "weight": 12
-   },
-   {
     "dex": 83,
     "min": 7,
     "max": 9,
     "weight": 23
    },
    {
-    "dex": 81,
+    "dex": 21,
     "min": 7,
     "max": 9,
-    "weight": 23
+    "weight": 30
+   },
+   {
+    "dex": 202,
+    "min": 7,
+    "max": 9,
+    "weight": 5
    },
    {
     "dex": 145,
     "min": 7,
     "max": 9,
-    "weight": 16
+    "weight": 28
    },
    {
-    "dex": 21,
+    "dex": 81,
     "min": 7,
     "max": 9,
-    "weight": 10
+    "weight": 11
    },
    {
     "dex": 138,
     "min": 7,
     "max": 9,
-    "weight": 21
+    "weight": 7
    }
   ]
  },
@@ -87,40 +87,40 @@ window.MQ.encounters = {
   "kind": "grass",
   "table": [
    {
-    "dex": 143,
-    "min": 8,
-    "max": 11,
-    "weight": 5
-   },
-   {
-    "dex": 185,
-    "min": 8,
-    "max": 11,
-    "weight": 30
-   },
-   {
     "dex": 15,
     "min": 8,
     "max": 11,
-    "weight": 30
-   },
-   {
-    "dex": 98,
-    "min": 8,
-    "max": 11,
-    "weight": 11
+    "weight": 6
    },
    {
     "dex": 151,
     "min": 8,
     "max": 11,
-    "weight": 11
+    "weight": 22
    },
    {
-    "dex": 43,
+    "dex": 47,
     "min": 8,
     "max": 11,
-    "weight": 26
+    "weight": 6
+   },
+   {
+    "dex": 63,
+    "min": 8,
+    "max": 11,
+    "weight": 15
+   },
+   {
+    "dex": 98,
+    "min": 8,
+    "max": 11,
+    "weight": 15
+   },
+   {
+    "dex": 143,
+    "min": 8,
+    "max": 11,
+    "weight": 18
    }
   ]
  },
@@ -128,40 +128,40 @@ window.MQ.encounters = {
   "kind": "grass",
   "table": [
    {
-    "dex": 166,
+    "dex": 120,
     "min": 13,
     "max": 16,
-    "weight": 22
+    "weight": 20
    },
    {
-    "dex": 70,
+    "dex": 59,
     "min": 13,
     "max": 16,
-    "weight": 6
-   },
-   {
-    "dex": 33,
-    "min": 13,
-    "max": 16,
-    "weight": 9
-   },
-   {
-    "dex": 108,
-    "min": 13,
-    "max": 16,
-    "weight": 7
+    "weight": 25
    },
    {
     "dex": 121,
     "min": 13,
     "max": 16,
-    "weight": 9
+    "weight": 6
    },
    {
-    "dex": 128,
+    "dex": 108,
     "min": 13,
     "max": 16,
-    "weight": 23
+    "weight": 26
+   },
+   {
+    "dex": 171,
+    "min": 13,
+    "max": 16,
+    "weight": 24
+   },
+   {
+    "dex": 45,
+    "min": 13,
+    "max": 16,
+    "weight": 27
    }
   ]
  },
@@ -169,40 +169,40 @@ window.MQ.encounters = {
   "kind": "grass",
   "table": [
    {
-    "dex": 120,
+    "dex": 166,
+    "min": 19,
+    "max": 22,
+    "weight": 25
+   },
+   {
+    "dex": 70,
     "min": 19,
     "max": 22,
     "weight": 19
-   },
-   {
-    "dex": 45,
-    "min": 19,
-    "max": 22,
-    "weight": 21
-   },
-   {
-    "dex": 115,
-    "min": 19,
-    "max": 22,
-    "weight": 26
-   },
-   {
-    "dex": 197,
-    "min": 19,
-    "max": 22,
-    "weight": 18
-   },
-   {
-    "dex": 33,
-    "min": 19,
-    "max": 22,
-    "weight": 15
    },
    {
     "dex": 171,
     "min": 19,
     "max": 22,
-    "weight": 19
+    "weight": 7
+   },
+   {
+    "dex": 197,
+    "min": 19,
+    "max": 22,
+    "weight": 30
+   },
+   {
+    "dex": 33,
+    "min": 19,
+    "max": 22,
+    "weight": 10
+   },
+   {
+    "dex": 121,
+    "min": 19,
+    "max": 22,
+    "weight": 7
    }
   ]
  },
@@ -210,40 +210,40 @@ window.MQ.encounters = {
   "kind": "cave",
   "table": [
    {
-    "dex": 166,
+    "dex": 171,
     "min": 21,
     "max": 24,
-    "weight": 11
-   },
-   {
-    "dex": 128,
-    "min": 21,
-    "max": 24,
-    "weight": 7
+    "weight": 20
    },
    {
     "dex": 120,
     "min": 21,
     "max": 24,
-    "weight": 29
+    "weight": 8
    },
    {
-    "dex": 59,
+    "dex": 121,
     "min": 21,
     "max": 24,
-    "weight": 14
+    "weight": 15
+   },
+   {
+    "dex": 166,
+    "min": 21,
+    "max": 24,
+    "weight": 18
    },
    {
     "dex": 115,
     "min": 21,
     "max": 24,
-    "weight": 17
+    "weight": 14
    },
    {
-    "dex": 136,
+    "dex": 45,
     "min": 21,
     "max": 24,
-    "weight": 18
+    "weight": 12
    }
   ]
  },
@@ -251,40 +251,40 @@ window.MQ.encounters = {
   "kind": "grass",
   "table": [
    {
-    "dex": 91,
+    "dex": 11,
     "min": 25,
     "max": 28,
-    "weight": 29
-   },
-   {
-    "dex": 106,
-    "min": 25,
-    "max": 28,
-    "weight": 16
-   },
-   {
-    "dex": 53,
-    "min": 25,
-    "max": 28,
-    "weight": 28
+    "weight": 14
    },
    {
     "dex": 199,
     "min": 25,
     "max": 28,
-    "weight": 12
-   },
-   {
-    "dex": 16,
-    "min": 25,
-    "max": 28,
-    "weight": 11
+    "weight": 21
    },
    {
     "dex": 24,
     "min": 25,
     "max": 28,
-    "weight": 14
+    "weight": 26
+   },
+   {
+    "dex": 53,
+    "min": 25,
+    "max": 28,
+    "weight": 7
+   },
+   {
+    "dex": 212,
+    "min": 25,
+    "max": 28,
+    "weight": 17
+   },
+   {
+    "dex": 191,
+    "min": 25,
+    "max": 28,
+    "weight": 18
    }
   ]
  },
@@ -292,40 +292,40 @@ window.MQ.encounters = {
   "kind": "grass",
   "table": [
    {
-    "dex": 134,
+    "dex": 30,
     "min": 31,
     "max": 34,
-    "weight": 11
-   },
-   {
-    "dex": 93,
-    "min": 31,
-    "max": 34,
-    "weight": 21
-   },
-   {
-    "dex": 86,
-    "min": 31,
-    "max": 34,
-    "weight": 15
-   },
-   {
-    "dex": 48,
-    "min": 31,
-    "max": 34,
-    "weight": 23
+    "weight": 30
    },
    {
     "dex": 98,
     "min": 31,
     "max": 34,
-    "weight": 28
+    "weight": 15
    },
    {
-    "dex": 47,
+    "dex": 63,
     "min": 31,
     "max": 34,
-    "weight": 28
+    "weight": 19
+   },
+   {
+    "dex": 43,
+    "min": 31,
+    "max": 34,
+    "weight": 10
+   },
+   {
+    "dex": 185,
+    "min": 31,
+    "max": 34,
+    "weight": 8
+   },
+   {
+    "dex": 174,
+    "min": 31,
+    "max": 34,
+    "weight": 30
    }
   ]
  },
@@ -333,40 +333,40 @@ window.MQ.encounters = {
   "kind": "cave",
   "table": [
    {
+    "dex": 123,
+    "min": 37,
+    "max": 40,
+    "weight": 27
+   },
+   {
+    "dex": 68,
+    "min": 37,
+    "max": 40,
+    "weight": 12
+   },
+   {
+    "dex": 149,
+    "min": 37,
+    "max": 40,
+    "weight": 18
+   },
+   {
+    "dex": 101,
+    "min": 37,
+    "max": 40,
+    "weight": 16
+   },
+   {
     "dex": 125,
     "min": 37,
     "max": 40,
-    "weight": 5
+    "weight": 20
    },
    {
     "dex": 19,
     "min": 37,
     "max": 40,
     "weight": 28
-   },
-   {
-    "dex": 149,
-    "min": 37,
-    "max": 40,
-    "weight": 17
-   },
-   {
-    "dex": 101,
-    "min": 37,
-    "max": 40,
-    "weight": 5
-   },
-   {
-    "dex": 84,
-    "min": 37,
-    "max": 40,
-    "weight": 6
-   },
-   {
-    "dex": 68,
-    "min": 37,
-    "max": 40,
-    "weight": 9
    }
   ]
  },
@@ -374,40 +374,40 @@ window.MQ.encounters = {
   "kind": "grass",
   "table": [
    {
-    "dex": 193,
-    "min": 39,
-    "max": 42,
-    "weight": 28
-   },
-   {
     "dex": 105,
-    "min": 39,
-    "max": 42,
-    "weight": 23
-   },
-   {
-    "dex": 73,
-    "min": 39,
-    "max": 42,
-    "weight": 16
-   },
-   {
-    "dex": 163,
     "min": 39,
     "max": 42,
     "weight": 6
    },
    {
-    "dex": 40,
+    "dex": 73,
     "min": 39,
     "max": 42,
-    "weight": 27
+    "weight": 19
    },
    {
-    "dex": 169,
+    "dex": 193,
     "min": 39,
     "max": 42,
-    "weight": 22
+    "weight": 10
+   },
+   {
+    "dex": 163,
+    "min": 39,
+    "max": 42,
+    "weight": 30
+   },
+   {
+    "dex": 14,
+    "min": 39,
+    "max": 42,
+    "weight": 29
+   },
+   {
+    "dex": 88,
+    "min": 39,
+    "max": 42,
+    "weight": 15
    }
   ]
  },
@@ -415,7 +415,19 @@ window.MQ.encounters = {
   "kind": "grass",
   "table": [
    {
-    "dex": 31,
+    "dex": 14,
+    "min": 44,
+    "max": 47,
+    "weight": 29
+   },
+   {
+    "dex": 76,
+    "min": 44,
+    "max": 47,
+    "weight": 14
+   },
+   {
+    "dex": 73,
     "min": 44,
     "max": 47,
     "weight": 19
@@ -424,31 +436,19 @@ window.MQ.encounters = {
     "dex": 40,
     "min": 44,
     "max": 47,
-    "weight": 15
-   },
-   {
-    "dex": 205,
-    "min": 44,
-    "max": 47,
-    "weight": 6
-   },
-   {
-    "dex": 105,
-    "min": 44,
-    "max": 47,
-    "weight": 21
-   },
-   {
-    "dex": 154,
-    "min": 44,
-    "max": 47,
-    "weight": 12
+    "weight": 5
    },
    {
     "dex": 163,
     "min": 44,
     "max": 47,
-    "weight": 7
+    "weight": 23
+   },
+   {
+    "dex": 154,
+    "min": 44,
+    "max": 47,
+    "weight": 13
    }
   ]
  },
@@ -456,40 +456,40 @@ window.MQ.encounters = {
   "kind": "cave",
   "table": [
    {
-    "dex": 199,
+    "dex": 191,
     "min": 48,
     "max": 52,
-    "weight": 28
+    "weight": 8
    },
    {
-    "dex": 212,
+    "dex": 16,
     "min": 48,
     "max": 52,
-    "weight": 28
-   },
-   {
-    "dex": 175,
-    "min": 48,
-    "max": 52,
-    "weight": 27
-   },
-   {
-    "dex": 24,
-    "min": 48,
-    "max": 52,
-    "weight": 22
-   },
-   {
-    "dex": 53,
-    "min": 48,
-    "max": 52,
-    "weight": 6
+    "weight": 23
    },
    {
     "dex": 91,
     "min": 48,
     "max": 52,
-    "weight": 14
+    "weight": 16
+   },
+   {
+    "dex": 161,
+    "min": 48,
+    "max": 52,
+    "weight": 22
+   },
+   {
+    "dex": 106,
+    "min": 48,
+    "max": 52,
+    "weight": 16
+   },
+   {
+    "dex": 212,
+    "min": 48,
+    "max": 52,
+    "weight": 10
    }
   ]
  }
