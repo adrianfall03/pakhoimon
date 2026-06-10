@@ -11,7 +11,7 @@
 const TILE = {
   GRASS: 0, PATH: 1, TREE: 2, WATER: 3, TALL: 4, WALL: 5, ROOF: 6, DOOR: 7, SIGN: 8,
   LEDGE: 9, FLOOR: 10, COUNTER: 11, CAVEWALL: 12, CAVEFLOOR: 13, FLOWER: 14, FENCE: 15,
-  SAND: 16, MAT: 17, PC: 18, HEAL: 19,
+  SAND: 16, MAT: 17, PC: 18, HEAL: 19, SNOW: 20, ROCK: 21,
 };
 
 const TILE_META = {
@@ -19,6 +19,7 @@ const TILE_META = {
   5: {}, 6: {}, 7: { walk: true, warp: true }, 8: { read: true }, 9: { walk: true, ledge: 'down' },
   10: { walk: true }, 11: { read: true }, 12: {}, 13: { walk: true, encounter: 'cave' }, 14: { walk: true },
   15: {}, 16: { walk: true }, 17: { walk: true, warp: true }, 18: { read: true }, 19: { read: true },
+  20: { walk: true }, 21: {}, // snow(walk), rock/boulder(block)
 };
 
 const OW = 26, OH = 20;   // outdoor map dimensions
@@ -67,15 +68,22 @@ export function generateWorld(rng, ctx) {
     maps.push(m); mapById[id] = m; return m;
   }
 
+  // a non-blocking, non-warp tile to stand an NPC on (avoids water/trees/rocks/exits)
+  function isWalkTile(m, x, y) { const t = m.tiles[y] && m.tiles[y][x]; return t !== undefined && TILE_META[t] && TILE_META[t].walk && !TILE_META[t].warp; }
+  function walkSpot(m) { for (let i = 0; i < 80; i++) { const x = rng.int(2, OW - 3), y = rng.int(2, OH - 3); if (isWalkTile(m, x, y)) return { x, y }; } return { x: OW >> 1, y: OH >> 1 }; }
+
   // Stamp a building footprint with a door; register a warp from the door to `toMap`.
   function building(m, x, y, w, h, toMapId, label) {
     rect(m.tiles, x, y, w, h, TILE.WALL);
     rect(m.tiles, x, y, w, 1, TILE.ROOF);
     const doorX = x + (w >> 1), doorY = y + h - 1;
     m.tiles[doorY][doorX] = TILE.DOOR;
-    // a short path approach below the door so buildings sit on a path stub over grass
+    // carve an approach path from the door to the town's path hub so it's always reachable
     if (m.tiles[doorY + 1]) m.tiles[doorY + 1][doorX] = TILE.PATH;
-    if (m.tiles[doorY + 2] && m.tiles[doorY + 2][doorX] === TILE.GRASS) m.tiles[doorY + 2][doorX] = TILE.PATH;
+    if (m.hub) {
+      const sy = Math.min(OH - 2, doorY + 1);
+      carveL(m.tiles, doorX, sy, m.hub.x, m.hub.y, TILE.PATH);
+    }
     m.warps.push({ x: doorX, y: doorY, to: toMapId, toX: IW >> 1, toY: IH - 2, label });
     if (label) m.objects.push({ x, y: y - 1, sign: label });
     return { doorX, doorY };
@@ -123,79 +131,163 @@ export function generateWorld(rng, ctx) {
     { id: 'route_victory', name: '冠军之路', kind: 'cave',  r: 2 },
     { id: 'league_plateau',name: '联盟高原', kind: 'town',  r: 2, gym: null },
   ];
-  // chain adjacency (north leads forward along the chain)
+  // ---------- adjacency with VARIED directions (no more "always go north") ----------
+  const DIRS4 = ['north', 'east', 'south', 'west'];
+  const opp = { north: 'south', south: 'north', east: 'west', west: 'east' };
   const order = nodes.map(n => n.id);
-  const adj = {};
+  const adj = {}, usedEdges = {};
+  for (const id of order) { adj[id] = {}; usedEdges[id] = new Set(); }
   for (let i = 0; i < order.length - 1; i++) {
-    adj[order[i]] = adj[order[i]] || {};
-    adj[order[i + 1]] = adj[order[i + 1]] || {};
-    adj[order[i]].north = order[i + 1];
-    adj[order[i + 1]].south = order[i];
+    const a = order[i], b = order[i + 1];
+    let choices = DIRS4.filter(d => !usedEdges[a].has(d) && !usedEdges[b].has(opp[d]));
+    if (!choices.length) choices = DIRS4.filter(d => !usedEdges[a].has(d));
+    const dir = rng.pick(choices.length ? choices : DIRS4);
+    adj[a][dir] = b; adj[b][opp[dir]] = a;
+    usedEdges[a].add(dir); usedEdges[b].add(opp[dir]);
   }
 
-  // ---------- build each outdoor map ----------
-  for (const n of nodes) {
-    const fill = n.kind === 'cave' ? TILE.CAVEFLOOR : TILE.GRASS; // towns are grassy with paths, not all sand
-    const m = newMap(n.id, n.name, n.kind, n.r, OW, OH, fill);
-    m.gym = n.gym || null;
-    if (n.kind === 'cave') {
-      // cave: walls border + scattered rock pillars + cave-floor encounters
-      for (let x = 0; x < OW; x++) { m.tiles[0][x] = TILE.CAVEWALL; m.tiles[OH - 1][x] = TILE.CAVEWALL; }
-      for (let y = 0; y < OH; y++) { m.tiles[y][0] = TILE.CAVEWALL; m.tiles[y][OW - 1] = TILE.CAVEWALL; }
-      for (let i = 0; i < 26; i++) {
-        const px = rng.int(2, OW - 3), py = rng.int(2, OH - 3);
-        m.tiles[py][px] = TILE.CAVEWALL;
-      }
-      m.encounter = `enc_${n.id}`;
-    } else {
-      frameTrees(m.tiles);
-      if (n.kind === 'route') {
-        // a winding path with tall-grass patches and a one-way ledge
-        const midY = OH >> 1;
-        hPath(m.tiles, midY, 1, OW - 2);
-        vPath(m.tiles, OW >> 1, 1, OH - 2);
-        for (let p = 0; p < 5; p++) {
-          const gx = rng.int(2, OW - 6), gy = rng.int(2, OH - 5);
-          rect(m.tiles, gx, gy, rng.int(3, 5), rng.int(2, 4), TILE.TALL);
-        }
-        // ledge row
-        const ly = rng.int(4, OH - 5);
-        for (let x = 3; x < OW - 3; x++) if (rng.chance(0.7)) m.tiles[ly][x] = TILE.LEDGE;
-        m.tiles[midY][OW >> 1] = TILE.PATH; // keep path crossing open
-        m.encounter = `enc_${n.id}`;
-      } else {
-        // town: grass base with a central path crossroads + plaza, flower beds and a sign
-        const cyRow = OH >> 1, cxCol = OW >> 1;
-        hPath(m.tiles, cyRow, 1, OW - 2);
-        vPath(m.tiles, cxCol, 1, OH - 2);
-        rect(m.tiles, cxCol - 1, cyRow - 1, 3, 3, TILE.PATH); // plaza
-        rect(m.tiles, cxCol - 5, cyRow + 2, 2, 2, TILE.FLOWER);
-        rect(m.tiles, cxCol + 4, cyRow - 3, 2, 2, TILE.FLOWER);
-        m.tiles[cyRow + 2][cxCol + 3] = TILE.SIGN;
-        m.objects.push({ x: cxCol + 3, y: cyRow + 2, sign: `${n.name} —— 愿你的旅途充满奇迹。` });
-      }
+  // ---------- per-region terrain themes (so areas don't all look identical) ----------
+  // styles: how the base/border/features are composed. Existing tiles only + SNOW/ROCK.
+  const THEME = {
+    0: { base: TILE.GRASS, border: TILE.TREE, style: 'plain' },   // 黎明高原 — open plains
+    1: { base: TILE.GRASS, border: TILE.TREE, style: 'coast' },   // 碧波海湾 — water & sand
+    2: { base: TILE.GRASS, border: TILE.ROCK, style: 'mountain' },// 苍岩山脉 — boulders & cliffs
+    3: { base: TILE.GRASS, border: TILE.TREE, style: 'forest' },  // 迷雾密林 — dense woods
+    4: { base: TILE.SAND, border: TILE.ROCK, style: 'barren' },   // 熔火荒原 — rocky wastes
+    5: { base: TILE.SNOW, border: TILE.TREE, style: 'tundra' },   // 极昼冻土 — snowfields
+  };
+  const themeOf = (r) => THEME[r] || THEME[0];
+
+  function inBounds(x, y) { return x >= 0 && y >= 0 && x < OW && y < OH; }
+  const HARD = new Set([TILE.WALL, TILE.ROOF, TILE.DOOR, TILE.MAT, TILE.SIGN, TILE.PC, TILE.HEAL, TILE.COUNTER]);
+  function carveH(t, y, x0, x1, tile) { const a = Math.min(x0, x1), b = Math.max(x0, x1); for (let x = a; x <= b; x++) if (inBounds(x, y) && !HARD.has(t[y][x])) t[y][x] = tile; }
+  function carveV(t, x, y0, y1, tile) { const a = Math.min(y0, y1), b = Math.max(y0, y1); for (let y = a; y <= b; y++) if (inBounds(x, y) && !HARD.has(t[y][x])) t[y][x] = tile; }
+  function carveL(t, x0, y0, x1, y1, tile) { if (rng.chance(0.5)) { carveH(t, y0, x0, x1, tile); carveV(t, x1, y0, y1, tile); } else { carveV(t, x0, y0, y1, tile); carveH(t, y1, x0, x1, tile); } }
+  // organic blob, only overwriting "soft" terrain (never paths/buildings/tall grass)
+  function blob(t, cx, cy, rad, tile, base) {
+    for (let dy = -rad; dy <= rad; dy++) for (let dx = -rad; dx <= rad; dx++) {
+      const x = cx + dx, y = cy + dy; if (!inBounds(x, y)) continue;
+      if (dx * dx + dy * dy > rad * rad + rad) continue;
+      const cur = t[y][x];
+      if (cur === base || cur === TILE.GRASS || cur === TILE.TREE || cur === TILE.ROCK || cur === TILE.SNOW || cur === TILE.SAND) t[y][x] = tile;
     }
   }
 
-  // ---------- reciprocal edge warps ----------
-  function edgeWarp(m, dir) {
-    if (dir === 'north') return { x: OW >> 1, y: 1 };
-    if (dir === 'south') return { x: OW >> 1, y: OH - 2 };
-    if (dir === 'east') return { x: OW - 2, y: OH >> 1 };
-    return { x: 1, y: OH >> 1 };
+  // ---------- build each outdoor map: base + border + exits + winding paths + theme ----------
+  const PATHTILE = (kind) => kind === 'cave' ? TILE.CAVEFLOOR : TILE.PATH;
+  for (const n of nodes) {
+    const th = themeOf(n.r);
+    const fill = n.kind === 'cave' ? TILE.CAVEFLOOR : th.base;
+    const m = newMap(n.id, n.name, n.kind, n.r, OW, OH, fill);
+    m.gym = n.gym || null;
+    m.theme = th.style;
+    if (n.kind === 'route' || n.kind === 'cave') m.encounter = `enc_${n.id}`;
+
+    // border
+    const border = n.kind === 'cave' ? TILE.CAVEWALL : th.border;
+    for (let x = 0; x < OW; x++) { m.tiles[0][x] = border; m.tiles[OH - 1][x] = border; }
+    for (let y = 0; y < OH; y++) { m.tiles[y][0] = border; m.tiles[y][OW - 1] = border; }
+
+    // assign exit positions for each connected direction (varied along the edge)
+    m.exits = {};
+    for (const dir of Object.keys(adj[n.id])) {
+      let e;
+      if (dir === 'north') { const x = rng.int(4, OW - 5); e = { ex: x, ey: 0, ix: x, iy: 1 }; }
+      else if (dir === 'south') { const x = rng.int(4, OW - 5); e = { ex: x, ey: OH - 1, ix: x, iy: OH - 2 }; }
+      else if (dir === 'east') { const y = rng.int(4, OH - 5); e = { ex: OW - 1, ey: y, ix: OW - 2, iy: y }; }
+      else { const y = rng.int(4, OH - 5); e = { ex: 0, ey: y, ix: 1, iy: y }; }
+      m.exits[dir] = e;
+    }
   }
-  const opp = { north: 'south', south: 'north', east: 'west', west: 'east' };
+
+  // build path networks + theming (needs exits assigned on all maps first)
+  for (const n of nodes) {
+    const m = mapById[n.id];
+    const th = themeOf(n.r);
+    const pt = PATHTILE(n.kind);
+    const exits = Object.values(m.exits);
+    // a hub somewhere off-centre, so the layout isn't a predictable centred cross
+    const hub = { x: rng.int(7, OW - 8), y: rng.int(6, OH - 7) };
+    m.hub = hub;
+    const anchors = exits.map(e => ({ x: e.ix, y: e.iy }));
+    if (n.id === 'town_newleaf') anchors.push({ x: 13, y: 12 }); // guaranteed walkable spawn
+    // connect every exit to the hub with an L-bend (winding, not straight-through)
+    for (const a of anchors) carveL(m.tiles, a.x, a.y, hub.x, hub.y, pt);
+    // punch the exit tiles through the border + a short inward stub
+    for (const e of exits) { m.tiles[e.ey][e.ex] = pt; m.tiles[e.iy][e.ix] = pt; }
+    // a couple of extra wandering branches for exploration (dead-ends)
+    const branches = rng.int(1, 3);
+    for (let i = 0; i < branches; i++) carveL(m.tiles, hub.x, hub.y, rng.int(3, OW - 4), rng.int(3, OH - 4), pt);
+
+    decorateOutdoor(m, n, th);
+  }
+
+  // ---------- region-themed feature placement ----------
+  function decorateOutdoor(m, n, th) {
+    const t = m.tiles, base = n.kind === 'cave' ? TILE.CAVEFLOOR : th.base;
+    const pathTiles = [];
+    for (let y = 1; y < OH - 1; y++) for (let x = 1; x < OW - 1; x++) if (t[y][x] === TILE.PATH || t[y][x] === TILE.CAVEFLOOR) pathTiles.push({ x, y });
+
+    if (n.kind === 'cave') {
+      // scattered rock pillars (kept clear of the carved corridors)
+      for (let i = 0; i < 22; i++) { const x = rng.int(2, OW - 3), y = rng.int(2, OH - 3); if (t[y][x] === TILE.CAVEFLOOR && !nearPath(x, y, pathTiles, 0)) t[y][x] = TILE.CAVEWALL; }
+      return;
+    }
+
+    // tall-grass encounter patches, anchored beside the paths so they're always reachable
+    if (n.kind === 'route') {
+      const patches = th.style === 'forest' ? 5 : th.style === 'barren' ? 2 : 4;
+      for (let i = 0; i < patches; i++) {
+        const a = pathTiles.length ? rng.pick(pathTiles) : { x: OW >> 1, y: OH >> 1 };
+        const gx = a.x + rng.int(-3, 3), gy = a.y + rng.int(-2, 2);
+        const w = rng.int(3, 5), h = rng.int(2, 4);
+        for (let yy = gy; yy < gy + h; yy++) for (let xx = gx; xx < gx + w; xx++)
+          if (inBounds(xx, yy) && (t[yy][xx] === base || t[yy][xx] === TILE.GRASS || t[yy][xx] === th.border)) t[yy][xx] = TILE.TALL;
+      }
+    }
+
+    // style-specific scenery
+    const F = (count, fn) => { for (let i = 0; i < count; i++) fn(); };
+    const randPt = () => ({ x: rng.int(2, OW - 3), y: rng.int(2, OH - 3) });
+    if (th.style === 'plain') {
+      F(rng.int(2, 4), () => { const p = randPt(); blob(t, p.x, p.y, rng.int(1, 2), TILE.TREE, base); });
+      F(rng.int(2, 3), () => { const p = randPt(); if (t[p.y][p.x] === base) rect(t, p.x, p.y, 2, 2, TILE.FLOWER); });
+    } else if (th.style === 'coast') {
+      F(rng.int(1, 2), () => { const p = randPt(); blob(t, p.x, p.y, rng.int(3, 4), TILE.WATER, base); });
+      // sandy rim around water
+      for (let y = 1; y < OH - 1; y++) for (let x = 1; x < OW - 1; x++) if (t[y][x] === base && touches(t, x, y, TILE.WATER)) t[y][x] = TILE.SAND;
+      F(rng.int(1, 2), () => { const p = randPt(); blob(t, p.x, p.y, 1, TILE.TREE, base); });
+    } else if (th.style === 'mountain') {
+      F(rng.int(4, 6), () => { const p = randPt(); blob(t, p.x, p.y, rng.int(1, 2), TILE.ROCK, base); });
+      F(rng.int(1, 2), () => { const y = rng.int(4, OH - 5); for (let x = 2; x < OW - 2; x++) if (rng.chance(0.55) && t[y][x] === base) t[y][x] = TILE.LEDGE; });
+      F(rng.int(1, 2), () => { const p = randPt(); blob(t, p.x, p.y, 1, TILE.TREE, base); });
+    } else if (th.style === 'forest') {
+      F(rng.int(7, 10), () => { const p = randPt(); blob(t, p.x, p.y, rng.int(1, 3), TILE.TREE, base); });
+    } else if (th.style === 'barren') {
+      F(rng.int(3, 5), () => { const p = randPt(); blob(t, p.x, p.y, rng.int(1, 2), TILE.ROCK, base); });
+      F(rng.int(0, 1), () => { const p = randPt(); blob(t, p.x, p.y, 2, TILE.WATER, base); });
+    } else if (th.style === 'tundra') {
+      F(rng.int(1, 3), () => { const p = randPt(); blob(t, p.x, p.y, rng.int(2, 3), TILE.WATER, base); });
+      F(rng.int(2, 3), () => { const p = randPt(); blob(t, p.x, p.y, 1, TILE.TREE, base); });
+    }
+
+    // towns get a readable sign near the hub
+    if (n.kind === 'town') {
+      for (const [dx, dy] of [[2, 1], [-2, 1], [3, 0], [-3, 0], [0, 2]]) {
+        const x = m.hub.x + dx, y = m.hub.y + dy;
+        if (inBounds(x, y) && (t[y][x] === base || t[y][x] === TILE.GRASS)) { t[y][x] = TILE.SIGN; m.objects.push({ x, y, sign: `${n.name} —— 愿你的旅途充满奇迹。` }); break; }
+      }
+    }
+  }
+  function nearPath(x, y, pathTiles, d) { return pathTiles.some(p => Math.abs(p.x - x) <= d && Math.abs(p.y - y) <= d); }
+  function touches(t, x, y, tile) { return (t[y - 1] && t[y - 1][x] === tile) || (t[y + 1] && t[y + 1][x] === tile) || t[y][x - 1] === tile || t[y][x + 1] === tile; }
+
+  // ---------- reciprocal edge warps (from each map's chosen exit positions) ----------
   for (const [from, dirs] of Object.entries(adj)) {
     for (const [dir, to] of Object.entries(dirs)) {
-      const m = mapById[from];
-      const p = edgeWarp(m, dir);
-      const arrive = edgeWarp(mapById[to], opp[dir]);
-      // open the border tile so the warp is reachable
-      m.tiles[p.y][p.x] = m.kind === 'cave' ? TILE.CAVEFLOOR : TILE.PATH;
-      // also open the very edge tile (the wall) as the warp trigger
-      const edge = dir === 'north' ? { x: p.x, y: 0 } : dir === 'south' ? { x: p.x, y: OH - 1 } : dir === 'east' ? { x: OW - 1, y: p.y } : { x: 0, y: p.y };
-      m.tiles[edge.y][edge.x] = TILE.PATH;
-      m.warps.push({ x: edge.x, y: edge.y, to, toX: arrive.x, toY: arrive.y });
+      const m = mapById[from], dst = mapById[to];
+      const e = m.exits[dir], a = dst.exits[opp[dir]];
+      m.warps.push({ x: e.ex, y: e.ey, to, toX: a.ix, toY: a.iy });
     }
   }
 
@@ -388,8 +480,8 @@ export function generateWorld(rng, ctx) {
     }
 
     // a couple of townsfolk outdoors
-    placeFlavorNpc(m, 10, 8, n.r);
-    placeFlavorNpc(m, OW - 12, OH - 8, n.r);
+    { const a = walkSpot(m); placeFlavorNpc(m, a.x, a.y, n.r); }
+    { const a = walkSpot(m); placeFlavorNpc(m, a.x, a.y, n.r); }
   }
 
   // ----- encounter tables + route trainers (driven by the progression curve) -----
@@ -411,7 +503,7 @@ export function generateWorld(rng, ctx) {
       const maxTeam = Math.min(3, 1 + Math.floor(tb[0] / 16));
       const count = rng.int(4, 6); // enough EXP on the critical path to keep pace with the curve
       for (let i = 0; i < count; i++) {
-        const x = rng.int(3, OW - 4), y = rng.int(3, OH - 4);
+        const { x, y } = walkSpot(m);
         const team = makeTeam(mm => mm.region === regions[n.r] && okCat(mm, tb[1]), rng.int(1, maxTeam), tb[0], tb[1]);
         if (!team.length) continue;
         placeTrainer(m, x, y, { team, sight: rng.int(0, 3) });
@@ -451,8 +543,9 @@ export function generateWorld(rng, ctx) {
     const id = `npc_rival_${i}`;
     // rival is a notch tougher than route trainers: allow one rarity tier above the level cap
     const team = makeTeam(mm => (CAT_RANK[mm.category] ?? 0) <= catCap(lvl) + 1 && mm.category !== 'legendary' && mm.category !== 'mythical' && mm.category !== 'starter', rivalPlan[i].size, lvl - 2, lvl);
+    const spot = walkSpot(m);
     const n = {
-      id, kind: 'rival', name: '青木', map: mapId, x: 6 + i, y: 6, dir: 'down', encounterIndex: i,
+      id, kind: 'rival', name: '青木', map: mapId, x: spot.x, y: spot.y, dir: 'down', encounterIndex: i,
       team, money: 0,
       preBattle: i === 0 ? '哟！既然博士给了我们怪兽，不比一场怎么行？' : '又见面了！让我看看你进步了多少！',
       postBattle: i === 0 ? '哼，这次算你走运。下次不会这么简单了！' : '可恶……不过别得意，我会追上来的！',

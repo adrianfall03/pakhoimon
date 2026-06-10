@@ -20,5 +20,7 @@ window.MQ.tileEnum = {
  "SAND": 16,
  "MAT": 17,
  "PC": 18,
- "HEAL": 19
+ "HEAL": 19,
+ "SNOW": 20,
+ "ROCK": 21
 };

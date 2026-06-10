@@ -53,5 +53,9 @@ window.MQ.tiles = {
  },
  "19": {
   "read": true
- }
+ },
+ "20": {
+  "walk": true
+ },
+ "21": {}
 };
